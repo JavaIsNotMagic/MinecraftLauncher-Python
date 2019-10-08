@@ -1,0 +1,10 @@
+#####
+#	Making Git Repos Clean Again!
+#####
+
+#Ignore Python's cache files
+/**/__pycache__/
+
+#DO NOT UPLOAD ANY DOWNLOADED DATA
+#The files get generated automatically, so let the program deal with that
+/cli/downloads/mc/*
