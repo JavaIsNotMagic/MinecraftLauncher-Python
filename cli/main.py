@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import re, os, sys
 import urllib.request
 import urllib.error as ue
@@ -57,7 +58,7 @@ print("Stage three: Select Version to Download")
 print("Version Types")
 print("Release (1)" + ' ' + "Snapshot (2)")
 print("Beta (3)" + ' ' + "Alpha (4)")
-try: 
+try:
 	ans = int(input(">:"))
 	pass
 except KeyboardInterrupt:

@@ -1,8 +1,12 @@
-import re
+import re, os
 def decode_urls(dp, wp):
 	f = open(dp, "r")
 	urls = f.read()
 	links = re.findall('"((http)s?://.*?)"', urls)
+	try:
+		os.mkdir(f'{os.getcwd()}/downloads/mc/data')
+	except FileExistsError:
+		pass
 	b = open(wp, "w+")
 	for url in links:
 		b.write(f"{url[0]}\n")
