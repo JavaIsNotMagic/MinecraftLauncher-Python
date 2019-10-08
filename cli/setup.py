@@ -1,5 +1,5 @@
 import pip
-packages_to_install=[]
+packages_to_install=[gi]
 if not packages_to_install == '[]':
 	for i in packages_to_install:
 		if hasattr(pip, 'main'):
