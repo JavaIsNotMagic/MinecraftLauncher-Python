@@ -8,4 +8,7 @@ if not packages_to_install == '[]':
 			pip._internal.main(['install', i])
 		#end
 	#end
+else:
+	print("No packages to install. Noting to do.")
+	exit(0)
 #end
