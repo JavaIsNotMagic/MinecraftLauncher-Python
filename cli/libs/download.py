@@ -4,6 +4,7 @@ import urllib.error as ue
 from urllib.parse import urlparse as up
 #main
 def getVersionUrl(file1, version, dp):
+	#Don't even ask. It works. That's all that matters
 	try: 
 		file = open(file1, "r")
 		pass
