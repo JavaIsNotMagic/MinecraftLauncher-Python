@@ -111,12 +111,16 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 				print("Skipping.")
 				continue
 			else:
-				parts = re.search(r'(?P<part1>.{1})\/(?P<part2>.{1})\/(?P<part3>)', write_path)	#Break directory into components
-				print(parts)
-				os.mkdir(parts['part1'])
-				os.mkdir(parts['part1'] + "/" + parts['part2'])
-				os.mkdir(parts['part1'] + "/" + parts['part2'] + "/" + parts['part3'])
-				ur.urlretrieve(line, write_path)
+				parts = re.search(r'(?P<part1>.{1,10})\/(?P<part2>.{1,10})\/(?P<part3>.{1,10})$', write_path)	#Break directory into components
+				try:
+					os.mkdir(str(os.getcwd() + "/downloads/mc/jars/" + parts['part1']))
+					os.mkdir(str(os.getcwd() + "/downloads/mc/jars/" + parts['part1']) + "/" + parts['part2'])
+					os.mkdir(str(os.getcwd() + "/downloads/mc/jars/" + parts['part1']) + "/" + parts['part2'] + "/" + parts['part3'])
+				except FileExistsError:
+					ur.urlretrieve(line, str(os.getcwd() + "/downloads/mc/jars/") + write_path)
+				except FileNotFoundError:
+					print("Cannot download file.")
+				#end
 			#end
 			print(f"Downloaded to\n\t{fpath}")	#Debug			
 		except ue.URLError as a:	#If there's an error with the above code:
