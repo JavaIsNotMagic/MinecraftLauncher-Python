@@ -41,8 +41,8 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 	print(fileOutput)	#Debug
 	for line in fileOutput:	#For every line
 		final = line.strip()
-		parseUrl = re.search(r'(?P<schema>http[s]?):\/\/(?P<siteName>(?P<subdomain>.{1,10})\.(?P<domain>.{1,10})\.(?P<tld>.{2,3}))\/(?P<path>.*(?P<fileName>\/.*\..*)$)', final)	#Searches line using specified regex
-		print(parseUrl)
+		parseUrl = re.search(r'(?P<schema>http[s]?):\/\/(?P<siteName>(?P<subdomain>.{1,12})\.(?P<domain>.{1,10})\.(?P<tld>.{2,3}))\/(?P<path>.*(?P<fileName>\/.*\..*)$)', final)	#Searches line using specified regex
+		#print(parseUrl)
 		"""
 		(?P<schema>	- Creates a new named capture group
 			http	-Looks for the literal characters "http"
