@@ -110,6 +110,6 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 			else:
 				continue
 			#end
-			#print(f"Downloaded to\n\t{fpath}")	#Debug			
+			print(f"Downloaded to\n\t{fpath}")	#Debug			
 		except ue.URLError as a:	#If there's an error with the above code:
 			print(f"{os.path.basename(up(line).path)} not found.\tReason: {str(a)}")	#Debug
