@@ -29,18 +29,20 @@ def getVersionUrl(file1, version, dp):
 	#end
 #end
 #paths
-paths = {'jars': str(os.getcwd() + "/downloads/mc/jars"),	#Get the path for plain jar files
-'windows': str(os.getcwd() + "/downloads/mc/jars/natives/windows"),	#Get the path for windows files
-'osx': str(os.getcwd() + "/downloads/mc/jars/natives/osx"),	#Get the path for osx files
-'linux': str(os.getcwd() + "/downloads/mc/jars/natives/linux") #Get the path for linux files
-}
-
+paths = {'jars': str(os.getcwd() + "/downloads/mc/jars")}	#Get the path for plain jar files
+try:
+	os.mkdir(paths['jars'])
+except:
+	pass
+#end
 def downloadLibs(file2):	#Download libraries used by Minecraft
 	file = open(file2, "r")	#Open the file specified in read only mode
 	fileOutput = file.readlines()	#Get the content of the file line by line
+	print(fileOutput)	#Debug
 	for line in fileOutput:	#For every line
-		#print(line)	#Debug
-		parseUrl = re.search(r'(?P<schema>http[s]?):\/\/(?P<siteName>(?P<subdomain>.{1,10})\.(?P<domain>.{1,10})\.(?P<tld>.{2,3}))\/(?P<path>.*(?P<fileName>\/.*\..*)$)', line)	#Searches line using specified regex
+		final = line.strip()
+		parseUrl = re.search(r'(?P<schema>http[s]?):\/\/(?P<siteName>(?P<subdomain>.{1,10})\.(?P<domain>.{1,10})\.(?P<tld>.{2,3}))\/(?P<path>.*(?P<fileName>\/.*\..*)$)', final)	#Searches line using specified regex
+		print(parseUrl)
 		"""
 		(?P<schema>	- Creates a new named capture group
 			http	-Looks for the literal characters "http"
@@ -74,31 +76,10 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 			$	-Align capture group to end of line
 		)	-Close capture group
 		"""
+		#Try to execute the following code:
 		try:
-			parseUrlDict = parseUrl.groupdict()	#Gets groups from regex result as a dictionary
-			#print(parseUrlDict) #Debug
-			pass
-			#print('\n\n', parseUrlDict, parseUrl)	#Debug
-			#print('\n\n', parseUrlDict['path'], parseUrlDict['fileName'])	#Debug
-		except:
-			#print("Error parsing URL.")
-			pass
-		save_path = None	#Python didn't like my method for defining variables
-		try:	#Try to execute the following code:
-			url3 = up(line)	#Parse the URL contained in the line
-			name3 = os.path.basename(url3.path)	#Gets the final part (filename) of the url path
-			if 'natives-windows' in line:	#If 'natives-windows' is found in the line
-				save_path = f"{paths['windows']}/{str(name3).strip()}"	#Joins the folder name to download to with the file's name
-			elif 'natives-osx' in line:	#If 'natives-osx is found in the line
-				save_path = f"{paths['osx']}/{str(name3).strip()}"	#Joins the folder name to download to with the file's name
-			elif 'natives-linux' in line:	#If 'natives-linux is found in the line
-				save_path = f"{paths['linux']}/{str(name3).strip()}"	#Joins the folder name to download to with the file's name
-			elif '.jar' in line:	#If '.jar' is found in the line
-				save_path = f"{paths['jars']}/{str(name3).strip()}"	#Joins the folder name to download to with the file's name
-			else:	#If the test doesn't work
-				print(f"\nNo valid type found in\n\t{line.strip()}\nSkipping...")	#Debug
-				continue	#Skip the rest of the execution for this iteration
 			#Gets file at the URL at the line and saves it to the specified location
+			parseUrlDict = parseUrl.groupdict()	#Gets groups from regex result as a dictionary
 			print(f"\nDownloading...\n\t{line.strip()}")	#Debug
 			
 			if parseUrlDict['subdomain'] == 'libraries':

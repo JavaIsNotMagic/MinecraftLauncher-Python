@@ -82,7 +82,7 @@ if ans == 2:
 	print("Downloading Version: " + version)
 	download.getVersionUrl(write_path, version, version_decoded)
 	utils.decode_urls(version_decoded, download_urls)
-	download.downloadLibs(version_decoded, download_urls)
+	download.downloadLibs(download_urls)
 	clean.clean()
 #end
 
@@ -92,7 +92,7 @@ if ans == 3:
 	print("Downloading Version: " + version)
 	download.getVersionUrl(write_path, version, version_decoded)
 	utils.decode_urls(version_decoded, download_urls)
-	download.downloadLibs(version_decoded, download_urls)
+	download.downloadLibs(download_urls)
 	clean.clean()
 #Alpha
 if ans == 4:
@@ -100,6 +100,6 @@ if ans == 4:
 	print("Downloading Version: " + version)
 	download.getVersionUrl(write_path, version, version_decoded)
 	utils.decode_urls(version_decoded, download_urls)
-	download.downloadLibs(version_decoded, download_urls)
+	download.downloadLibs(download_urls)
 	clean.clean()
 #end
