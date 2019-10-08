@@ -76,11 +76,16 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 		"""
 		try:
 			parseUrlDict = parseUrl.groupdict()	#Gets groups from regex result as a dictionary
+			#print(parseUrlDict) #Debug
 			pass
 			#print('\n\n', parseUrlDict, parseUrl)	#Debug
 			#print('\n\n', parseUrlDict['path'], parseUrlDict['fileName'])	#Debug
 
-			#TODO: Use parseUrl.groupdict() to find locations for all the files
+			#Get absolute path for the file
+			if parseUrlDict['fileName'] in parseUrlDict['path']:
+				write_path = re.sub(parseUrlDict['fileName'], "", parseUrlDict['path'])
+				#print(write_path) #Debug
+			#end
 		except:
 			#print("Error parsing URL.")
 			pass
@@ -99,8 +104,22 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 			else:	#If the test doesn't work
 				print(f"\nNo valid type found in\n\t{line.strip()}\nSkipping...")	#Debug
 				continue	#Skip the rest of the execution for this iteration
+			#Gets file at the URL at the line and saves it to the specified location
+			fpath = write_path + "/" + name3
 			print(f"\nDownloading...\n\t{line.strip()}")	#Debug
-			ur.urlretrieve(line, save_path)	#Gets file at the URL at the line and saves it to the specified location
-			print(f"Downloaded to\n\t{save_path}")	#Debug
+			try:
+				ur.urlretrieve(line, write_path)
+			except:
+				if 'v1/objects' in write_path:
+					print("Skipping.")
+					continue
+				else:
+					parts = re.search(r'(?P<part1>.{1,10})\/(?P<part2>.{1,10})\/(?P<part3>.{1,10})$', write_path)	#Break directory into components
+					os.mkdir(parts['part1'])
+					os.mkdir(parts['part1'] + "/" + parts['part2'])
+					os.mkdir(parts['part1'] + "/" + parts['part2'] + "/" + parts['part3'])
+					ur.urlretrieve(line, write_path)
+			#end
+			print(f"Downloaded to\n\t{fpath}")	#Debug			
 		except ue.URLError as a:	#If there's an error with the above code:
 			print(f"{os.path.basename(up(line).path)} not found.\tReason: {str(a)}")	#Debug
