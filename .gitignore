@@ -7,4 +7,5 @@
 
 #DO NOT UPLOAD ANY DOWNLOADED DATA
 #The files get generated automatically, so let the program deal with that
+/cli/downloads/*.*
 /cli/downloads/mc/*
