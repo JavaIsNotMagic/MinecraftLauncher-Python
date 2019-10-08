@@ -4,8 +4,19 @@ import urllib.error as ue
 from urllib.parse import urlparse as up
 #main
 def getVersionUrl(file1, version, dp):
-	file = open(file1, "r+")
+	try: 
+		file = open(file1, "r")
+		pass
+	except:
+		file = open(file1, "w+")
+		file.write("")
+		file.flush()
+		file.close()
+		file = open(file1, "r")
+		pass
+	#end
 	string = version + ".json"
+	flag = None
 	for line in file:
 		if string in line:
 			#print(line) #Debug
@@ -42,7 +53,7 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 	for line in fileOutput:	#For every line
 		final = line.strip()
 		parseUrl = re.search(r'(?P<schema>http[s]?):\/\/(?P<siteName>(?P<subdomain>.{1,12})\.(?P<domain>.{1,10})\.(?P<tld>.{2,3}))\/(?P<path>.*(?P<fileName>\/.*\..*)$)', final)	#Searches line using specified regex
-		#print(parseUrl)
+		print(parseUrl)
 		"""
 		(?P<schema>	- Creates a new named capture group
 			http	-Looks for the literal characters "http"
@@ -53,7 +64,7 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 		\/	-Literal "/"
 		(?P<siteName>	-Named capture group
 			(?P<subdomain>	-Named capture group
-				.{1,10}	-1 to 10 of any character
+				.{1,12}	-1 to 12 of any character
 			)	-Close capture group
 			\.	-Literal "."
 			(?P<domain>	-Named capture group

@@ -1,17 +1,10 @@
 import os
-download_path = str(os.getcwd()) + "/downloads/vm.json"
-version_decoded = str(os.getcwd() + "/downloads/version_decoded.txt")
 write_path = str(os.getcwd()) + "/downloads/urls.txt"
 download_path_mc = str(os.getcwd()) + "/downloads/mc/data/download_urls.txt"
 def clean():
 	#Final stage
 	print("Stage Five: Cleanup.")
 	try:
-		os.remove(download_path)
-		if os.path.isfile(download_path):
-			print("Could not remove decoded json")
-		else:
-			pass
 		os.remove(write_path)
 		if os.path.isfile(write_path):
 			print("Could not remove version data")

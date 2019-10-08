@@ -2,6 +2,7 @@
 import re, os, sys
 import urllib.request
 import urllib.error as ue
+#Custom libs
 libs_path = str(os.getcwd())+ "/libs"
 sys.path.append(libs_path)
 import selection, download, clean, utils
@@ -88,7 +89,7 @@ if ans == 2:
 
 #Beta
 if ans == 3:
-	version = selection.pc()
+	version = selection.pb()
 	print("Downloading Version: " + version)
 	download.getVersionUrl(write_path, version, version_decoded)
 	utils.decode_urls(version_decoded, download_urls)
