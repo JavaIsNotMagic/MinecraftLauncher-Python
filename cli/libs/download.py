@@ -8,11 +8,11 @@ def getVersionUrl(file1, version, dp):
 	string = version + ".json"
 	for line in file:
 		if string in line:
-			#print(line)
+			#print(line) #Debug
 			flag = True
 			break
 		else:
-			#print("Not found.")
+			#print("Not found.") #Debug
 			flag = False
 			pass
 		#end
@@ -80,12 +80,6 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 			pass
 			#print('\n\n', parseUrlDict, parseUrl)	#Debug
 			#print('\n\n', parseUrlDict['path'], parseUrlDict['fileName'])	#Debug
-
-			#Get absolute path for the file
-			if parseUrlDict['fileName'] in parseUrlDict['path']:
-				write_path = re.sub(parseUrlDict['fileName'], "", parseUrlDict['path'])
-				#print(write_path) #Debug
-			#end
 		except:
 			#print("Error parsing URL.")
 			pass
@@ -105,23 +99,24 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 				print(f"\nNo valid type found in\n\t{line.strip()}\nSkipping...")	#Debug
 				continue	#Skip the rest of the execution for this iteration
 			#Gets file at the URL at the line and saves it to the specified location
-			fpath = write_path + "/" + name3
 			print(f"\nDownloading...\n\t{line.strip()}")	#Debug
-			if 'v1/objects' in write_path:
-				print("Skipping.")
-				continue
-			else:
-				parts = re.search(r'(?P<part1>.{1,10})\/(?P<part2>.{1,10})\/(?P<part3>.{1,10})$', write_path)	#Break directory into components
-				try:
-					os.mkdir(str(os.getcwd() + "/downloads/mc/jars/" + parts['part1']))
-					os.mkdir(str(os.getcwd() + "/downloads/mc/jars/" + parts['part1']) + "/" + parts['part2'])
-					os.mkdir(str(os.getcwd() + "/downloads/mc/jars/" + parts['part1']) + "/" + parts['part2'] + "/" + parts['part3'])
-				except FileExistsError:
-					ur.urlretrieve(line, str(os.getcwd() + "/downloads/mc/jars/") + write_path)
-				except FileNotFoundError:
-					print("Cannot download file.")
+			
+			if parseUrlDict['subdomain'] == 'libraries':
+				currentPath = ""
+				for i in parseUrlDict['path'].split("/")[:-1]:
+					currentPath += "/" + i
+					#print(currentPath) #Debug
+					try:
+						#print("Making dir: " + paths['jars'] + currentPath) #Debug
+						os.mkdir(paths['jars'] + currentPath)
+					except:
+						pass
 				#end
+				fpath = paths['jars'] + "/" + parseUrlDict['path']
+				ur.urlretrieve(line, fpath)
+			else:
+				continue
 			#end
-			print(f"Downloaded to\n\t{fpath}")	#Debug			
+			#print(f"Downloaded to\n\t{fpath}")	#Debug			
 		except ue.URLError as a:	#If there's an error with the above code:
 			print(f"{os.path.basename(up(line).path)} not found.\tReason: {str(a)}")	#Debug
