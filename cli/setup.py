@@ -9,6 +9,5 @@ if not packages_to_install == '[]':
 		#end
 	#end
 else:
-	print("No packages to install. Noting to do.")
 	exit(0)
 #end

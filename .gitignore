@@ -7,5 +7,5 @@
 
 #DO NOT UPLOAD ANY DOWNLOADED DATA
 #The files get generated automatically, so let the program deal with that
-/cli/downloads/*.*
+#ONLY DELETE data in the mc dir. ALL OTHER FILES ARE NEEDED BY THE LAUNCHER. DO NOT DELETE THEM
 /cli/downloads/mc/*
