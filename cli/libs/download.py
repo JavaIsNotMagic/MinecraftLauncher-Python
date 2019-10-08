@@ -107,18 +107,16 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 			#Gets file at the URL at the line and saves it to the specified location
 			fpath = write_path + "/" + name3
 			print(f"\nDownloading...\n\t{line.strip()}")	#Debug
-			try:
+			if 'v1/objects' in write_path:
+				print("Skipping.")
+				continue
+			else:
+				parts = re.search(r'(?P<part1>.{1})\/(?P<part2>.{1})\/(?P<part3>)', write_path)	#Break directory into components
+				print(parts)
+				os.mkdir(parts['part1'])
+				os.mkdir(parts['part1'] + "/" + parts['part2'])
+				os.mkdir(parts['part1'] + "/" + parts['part2'] + "/" + parts['part3'])
 				ur.urlretrieve(line, write_path)
-			except:
-				if 'v1/objects' in write_path:
-					print("Skipping.")
-					continue
-				else:
-					parts = re.search(r'(?P<part1>.{1,10})\/(?P<part2>.{1,10})\/(?P<part3>.{1,10})$', write_path)	#Break directory into components
-					os.mkdir(parts['part1'])
-					os.mkdir(parts['part1'] + "/" + parts['part2'])
-					os.mkdir(parts['part1'] + "/" + parts['part2'] + "/" + parts['part3'])
-					ur.urlretrieve(line, write_path)
 			#end
 			print(f"Downloaded to\n\t{fpath}")	#Debug			
 		except ue.URLError as a:	#If there's an error with the above code:
