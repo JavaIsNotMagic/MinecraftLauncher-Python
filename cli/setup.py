@@ -10,7 +10,8 @@ def PackageInstall(error):
 		subprocess.call("pip install " + lib)
 #end
 try:
-    import gi
+    import pygame
 except ImportError as error:
         PackageInstall(error)
+	pass
 #end
