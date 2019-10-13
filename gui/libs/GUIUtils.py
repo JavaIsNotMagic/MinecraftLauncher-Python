@@ -2,9 +2,9 @@ from tkinter import Entry, Label, Tk, Button, StringVar, messagebox
 from tkinter.constants import *
 from pathlib import Path
 import os,sys
-path = str(os.getcwd()) + "/libs"
+path = str(os.getcwd()) + "/libs/enc"
 sys.path.append(path)
-from enc import encrypt
+from enc import encrypt, decrypt
 
 def createUser():
 	root = Tk()
@@ -28,13 +28,24 @@ def createUser():
 			messagebox.showinfo("Message", "Saving User data...")
 			encrypt()
 			messagebox.showinfo("Message", "Done!")
-		except FileNotFoundError as e:
-			print(e)
-			exit()
+		except:
 			root.destroy()
+			exit()
 		#end
 		root.destroy()
 	#end
 	Button(root, text="Submit", width=10, command=callback).pack()
 	root.mainloop()
+#end
+
+def editUser():
+	root = Tk()
+	root.title("Edit User")
+	a = decrypt()
+	b= messagebox.showinfo(a)
+	if b == "OK":
+		root.destroy()
+	else:
+		pass
+	#end
 #end

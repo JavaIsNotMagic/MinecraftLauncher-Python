@@ -9,4 +9,9 @@
 #The files get generated automatically, so let the program deal with that
 #ONLY DELETE data in the mc dir. ALL OTHER FILES ARE NEEDED BY THE LAUNCHER. DO NOT DELETE THEM
 /cli/downloads/mc/jars/*
+
+#Delete the GUI data. Most of it is user information. THIS NEEDS TO STAY LOCAL
 /gui/data/*
+
+#Don't give away how we store user information. Better safe than sorry.
+/gui/libs/enc/*
