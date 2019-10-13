@@ -1,4 +1,4 @@
-import pip,time
+import pip,time,os
 def PackageInstall(error):
 	lib = str(error)[15:].replace('\'', '')
 	print('>>>',str(error))
