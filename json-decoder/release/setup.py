@@ -1,4 +1,4 @@
-import time, subprocess, os, sys
+import pip,time
 def PackageInstall(error):
 	lib = str(error)[15:].replace('\'', '')
 	print('>>>',str(error))
@@ -7,7 +7,7 @@ def PackageInstall(error):
 	packages_to_install=open(str(os.getcwd() + "/requirements.txt")).readlines()
 	for line in packages_to_install:
 		lib = line
-		os.system("pip3 install " + lib)
+		pip.main(['install', lib])
 #end
 try:
 	import pygame
