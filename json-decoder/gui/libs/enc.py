@@ -41,7 +41,7 @@ def decrypt():
 def encrypt():
 	salt_size = nacl.pwhash.argon2i.SALTBYTES
 	salt = nacl.utils.random(salt_size)
-	with open(fpath, "r") as h:
+	with open(fpath, "w+") as h:
 		h.write("Salt: " + salt)
 		h.flush()
 		h.close()
