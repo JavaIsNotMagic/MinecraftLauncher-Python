@@ -7,7 +7,7 @@ def PackageInstall(error):
 	packages_to_install=open(str(os.getcwd() + "/requirements.txt")).readlines()
 	for line in packages_to_install:
 		lib = line
-		subprocess.call("pip3 install " + lib)
+		os.system("pip3 install " + lib)
 #end
 try:
 	import pygame
