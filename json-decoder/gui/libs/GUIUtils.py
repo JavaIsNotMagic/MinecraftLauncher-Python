@@ -6,6 +6,14 @@ path = str(os.getcwd()) + "/libs/enc"
 sys.path.append(path)
 from enc import encrypt, decrypt
 
+fpath = str(os.path.normpath(os.getcwd())) + "/data/unec/users.txt"
+dpath = str(os.path.normpath(os.getcwd())) + "/data/1/users.txt"
+
+def remove():
+	os.remove(fpath)
+	os.remove(dpath)
+#end
+
 def createUser():
 	root = Tk()
 	root.geometry("500x200")
@@ -19,7 +27,6 @@ def createUser():
 	def callback():
 		#print(uname.get()) #Debug
 		#print(passwd.get()) #Debug
-		fpath = str(os.path.normpath(os.getcwd())) + "/data/unec/users.txt"
 		try:
 			f = open(fpath, "w+")
 			f.write("Username: " + uname.get() + "\t" + "Password: " + passwd.get())
@@ -38,7 +45,17 @@ def createUser():
 	Button(root, text="Submit", width=10, command=callback).pack()
 	root.mainloop()
 #end
-
+def deleteUser():
+	root = Tk()
+	Label(root, text="Press okay to delete ALL users").pack()
+	Button(root, text="OK", command=remove).pack()
+	a = messagebox.showinfo("Delete User", "Done!")
+	if a == "OK":
+		root.destroy
+	else:
+		pass
+	#end
+#end
 """def editUser():
 	root = Tk()
 	root.title("Edit User")
