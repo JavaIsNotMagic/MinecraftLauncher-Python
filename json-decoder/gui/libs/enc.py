@@ -2,7 +2,7 @@
 import nacl.secret
 import nacl.utils
 import nacl.pwhash
-import os, base64, re
+import os, base64
 #GLOBALS
 fpath = str(os.getcwd() + "/data/unec/nacl/salt.salt")
 users = str(os.getcwd() + "/data/unec/users.txt")
@@ -22,34 +22,42 @@ def getfile():
 
 def decrypt():
 	password = getfile().encode('utf-8')
+	kdf = None
+	key = None
 	with open(fpath, "r") as f:
-		salt = re.sub(r'"', '', f.read().replace('b', '')).encode('utf-8')
-		kdf = nacl.pwhash.argon2i.kdf
-		key = kdf(nacl.secret.SecretBox.KEY_SIZE, password, salt)
-		with open(users_file, "r") as g:
-			content = g.read()
-			enc = base64.b64decode(content)
-			g.close()
+		salt = str(f.read()).replace('\"', "")
+		try:
+			kdf = nacl.pwhash.argon2i.kdf
+			key = kdf(nacl.secret.SecretBox.KEY_SIZE, password, salt)
+			with open(users_file, "r") as g:
+				content = g.read()
+				enc = base64.b64decode(content)
+				g.close()
+			#end
+			box = nacl.secret.SecretBox(key)
+			msg = box.decrypt(enc)
+			secret_msg = msg.decode('utf-8')
+			return secret_msg
 		#end
-		box = nacl.secret.SecretBox(key)
-		msg = box.decrypt(enc)
-		secret_msg = msg.decode('utf-8')
-		return secret_msg
-#end
+		except nacl.exceptions.ValueError:
+			print(salt)
+			#exit()
+		#end
+		
 
 #end
 def encrypt():
-	salt_size = nacl.pwhash.argon2i.SALTBYTES
-	salt = nacl.utils.random(salt_size)
+	salt_size_e = nacl.pwhash.argon2i.SALTBYTES
+	salt_e = nacl.utils.random(salt_size_e)
 	with open(fpath, "w+") as h:
-		h.write("Salt: " + salt)
+		h.write("Salt: " + str(salt_e))
 		h.flush()
 		h.close()
 	#end
 	password = getfile().encode('utf-8')
 
 	kdf = nacl.pwhash.argon2i.kdf
-	key = kdf(nacl.secret.SecretBox.KEY_SIZE, password, salt)
+	key = kdf(nacl.secret.SecretBox.KEY_SIZE, password, salt_e)
 	msg = open(users, "r")
 	secret_msg = str(msg.readlines()).encode('utf-8') 
 	box = nacl.secret.SecretBox(key)

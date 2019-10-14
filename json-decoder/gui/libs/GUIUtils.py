@@ -1,7 +1,7 @@
 from tkinter import Entry, Label, Tk, Button, StringVar, messagebox
 from tkinter.constants import *
 from pathlib import Path
-import os,sys
+import os,sys,traceback
 path = str(os.getcwd()) + "/libs/enc"
 sys.path.append(path)
 from enc import encrypt, decrypt
@@ -28,7 +28,8 @@ def createUser():
 			messagebox.showinfo("Message", "Saving User data...")
 			encrypt()
 			messagebox.showinfo("Message", "Done!")
-		except:
+		except Exception as e:
+			traceback.print_exc()
 			root.destroy()
 			exit()
 		#end
@@ -38,14 +39,12 @@ def createUser():
 	root.mainloop()
 #end
 
-def editUser():
+"""def editUser():
 	root = Tk()
 	root.title("Edit User")
 	a = decrypt()
-	b= messagebox.showinfo(a)
-	if b == "OK":
-		root.destroy()
-	else:
-		pass
+	Label(root, text=a).pack()
+	Button(root, text="OK", width=5, command=root.destroy).pack()
 	#end
 #end
+"""
