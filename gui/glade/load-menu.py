@@ -46,7 +46,7 @@ class handler:
 	#end
 	def menu_file_new_user(self, *args):
 		new_user_builder = Gtk.Builder()
-		new_user_builder.add_from_file("new_user.glade")
+		new_user_builder.add_from_file(path + "/glade-menus/" + "new_user.glade")
 		new_user_builder.connect_signals(new_user_handler())
 		new_user_obj = new_user_builder.get_object("user_main")
 		new_user_obj.show_all()
@@ -60,7 +60,7 @@ class handler:
 	#end
 	def menu_file_open_help(self, *args):
 		help_builder = Gtk.Builder()
-		help_builder.add_from_file("help.glade")
+		help_builder.add_from_file(path + "/glade-menus/" + "help.glade")
 		help_obj = help_builder.get_object("help_main")
 		help_obj.show_all()
 		Gtk.main()
@@ -69,7 +69,7 @@ class handler:
 		Gtk.main_quit()
 #end
 builder = Gtk.Builder()
-builder.add_from_file("menu.glade")
+builder.add_from_file(path + "/glade-menus/" + "menu.glade")
 builder.connect_signals(handler())
 
 window = builder.get_object("window_menu")
