@@ -27,9 +27,10 @@
             <property name="position">0</property>
           </packing>
         </child>
-        <child>
+        <!-- -->
+         <child>
           <object class="GtkButton" id="about">
-            <property name="label" translatable="yes">About</property>
+            <property name="label" translatable="yes">Getting Started</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
@@ -41,6 +42,7 @@
             <property name="position">1</property>
           </packing>
         </child>
+        <!-- -->
         <child>
           <object class="GtkButton" id="advanced_help">
             <property name="label" translatable="yes">Advanced Features</property>
