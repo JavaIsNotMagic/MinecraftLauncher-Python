@@ -2,8 +2,6 @@ import gi,os,sys
 #Other Imports
 path = os.getcwd()
 file = path + "/data/" + "database.db"
-text = None
-text1 = None
 #GUI
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk

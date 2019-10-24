@@ -10,13 +10,18 @@ from gi.repository import Gtk
 #User Creation
 class new_user_handler:
 	def new_user_close(self, *args):
+		print("Close window")
 		Gtk.main_quit()
 	#end
 	def new_user_uname(self, *args):
-		text = Gtk.Entry.get_text()
+		print("Grabbed username")
+		text = self.get_text()
+		return text
 	#end
 	def new_user_password(self, *args):
-		text1 = Gtk.Entry.get_text()
+		print("Grabbed password")
+		text1 = self.get_text()
+		return text1
 	#end
 	def new_user_submit(self, *args):
 		uname = new_user_uname()
@@ -27,6 +32,7 @@ class new_user_handler:
 			db.flush()
 			db.close()
 		#end
+		print("Wrote to file")
 	#end
 #end
 #About
@@ -49,7 +55,7 @@ class help_handler:
 	def help_menu_about(self, *args):
 		about_builder = Gtk.Builder()
 		about_builder.add_from_file(path + "/glade-menus/" + "about.glade")
-		about_builder.connect_signals(about_handler())
+		about_builder.connect_signals(about_handler)
 		about_obj = help_builder.get_object("about_main")
 		about_obj.show_all()
 		Gtk.main()
@@ -72,7 +78,7 @@ class handler:
 	def menu_file_new_user(self, *args):
 		new_user_builder = Gtk.Builder()
 		new_user_builder.add_from_file(path + "/glade-menus/" + "new_user.glade")
-		new_user_builder.connect_signals(new_user_handler())
+		new_user_builder.connect_signals(new_user_handler)
 		new_user_obj = new_user_builder.get_object("user_main")
 		new_user_obj.show_all()
 		Gtk.main()
@@ -86,7 +92,7 @@ class handler:
 	def menu_file_open_help(self, *args):
 		help_builder = Gtk.Builder()
 		help_builder.add_from_file(path + "/glade-menus/" + "help.glade")
-		help_builder.connect_signals(help_handler())
+		help_builder.connect_signals(help_handler)
 		help_obj = help_builder.get_object("help_main")
 		help_obj.show_all()
 		Gtk.main()
