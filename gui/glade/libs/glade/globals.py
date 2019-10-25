@@ -11,14 +11,14 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 #User Creation
 #Following: https://stackoverflow.com/questions/37837682/python-class-input-argument/37837766
-class new_user_handler:
+class new_user_handler():
 	def __init__(self):
 		print("Hello World!")
 		#new_user_object = builder_obj
 	#end
 	def new_user_close(self, *args):
 		print("Close window")
-		Gtk.main_quit()
+		self.Destroy()
 	#end
 	def new_user_uname(self, entry, *args):
 		print("Grabbed username")
@@ -36,29 +36,30 @@ class new_user_handler:
 		uname = text
 		passwd = text1
 		if type(text) != None:
-			with open(file, "w") as db:
+			with open(file, "a") as db:
 				db.write(uname + "," + passwd)
 				db.write('\n')
 				db.flush()
 				db.close()
 			#end
 			print("Wrote to file")
+			self.Destroy()
 		#end
 		else:
 			print("Cannot write info to file. No information given")
-			Gtk.main_quit()
+			self.Destroy()
 	#end
 #end
 #About
 class about_menu:
 	def about_quit(self, *args):
-		Gtk.main_quit()
+		self.Destroy()
 	#end
 #end
 #Help Menu
 class help_handler:
 	def help_menu_quit(self, *args):
-		Gtk.main_quit()
+		self.Destroy()
 	#end
 	def help_menu_getting_started(self, *args):
 		print("Work in progress")
@@ -112,5 +113,5 @@ class handler:
 		Gtk.main()
 	#end
 	def menu_file_quit(self, *args):
-		Gtk.main_quit()
+		self.Destroy()
 #end
