@@ -8,11 +8,13 @@ text1 = None
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 #User Creation
-class new_user_handler:
+#Following: https://stackoverflow.com/questions/37837682/python-class-input-argument/37837766
+class new_user_handler(obj):
 	global text
 	global text1
-	def __init__(self, *args):
+	def __init__(builder_obj):
 		print("Hello World!")
+		new_user_object = self.builder_obj
 	#end
 	def new_user_close(self, *args):
 		print("Close window")
@@ -20,12 +22,12 @@ class new_user_handler:
 	#end
 	def new_user_uname(self, *args):
 		print("Grabbed username")
-		entry = self.Builder.get_object('new_user_uname')
+		entry = new_user_builder.get_object('new_user_uname')
 		text = entry.get_text()
 	#end
 	def new_user_password(self, *args):
 		print("Grabbed password")
-		entry1 = self.Builder.get_object('new_user_password')
+		entry1 = new_user_builder.get_object('new_user_password')
 		text1 = entry1.get_text()
 	#end
 	def new_user_submit(self, *args):
