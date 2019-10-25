@@ -35,7 +35,7 @@ class new_user_handler():
 	def new_user_submit(self, *args):
 		uname = text
 		passwd = text1
-		if type(text) != None:
+		if type(uname) != None:
 			with open(file, "a") as db:
 				atoken = uuid.uuid4().hex
 				db.write(uname + "," + passwd + "," + atoken)
