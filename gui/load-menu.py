@@ -8,7 +8,10 @@ from gi.repository import Gtk
 #Libraries
 lib_path = str(os.getcwd()) + "/libs/glade"
 sys.path.append(lib_path)
-from globals import handler, about_menu, help_handler, new_user_handler
+from globals import handler
+#Do we really need this?
+#about_menu, help_handler, new_user_handler
+
 #Main
 builder = Gtk.Builder()
 builder.add_from_file(path + "/glade-menus/" + "menu.glade")
