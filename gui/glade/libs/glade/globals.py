@@ -2,40 +2,42 @@ import gi,os
 #Other Imports
 path = os.getcwd()
 file = path + "/data/" + "database.db"
+global text
 text = None
+global text1
 text1 = None
 #GUI
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 #User Creation
 #Following: https://stackoverflow.com/questions/37837682/python-class-input-argument/37837766
-class new_user_handler():
-	global text
-	global text1
-	def __init__(builder_obj):
+class new_user_handler:
+	def __init__(self):
 		print("Hello World!")
-		new_user_object = self.builder_obj
+		#new_user_object = builder_obj
 	#end
 	def new_user_close(self, *args):
 		print("Close window")
 		Gtk.main_quit()
 	#end
-	def new_user_uname(self, *args):
+	def new_user_uname(self, entry, *args):
 		print("Grabbed username")
-		entry = new_user_builder.get_object('new_user_uname')
-		text = entry.get_text()
+		#entry = new_user_builder.get_object('new_user_uname')
+		text = entry.get_buffer().get_text()
+		print(entry.get_buffer().get_text(), text)
 	#end
-	def new_user_password(self, *args):
+	def new_user_password(self, entry, *args):	#The first argument for an editable (a text entry has a parent of an editable) when the changed signal is ran is the widget itself: https://developer.gnome.org/pygtk/stable/class-gtkeditable.html#signal-gtkeditable--changed
 		print("Grabbed password")
-		entry1 = new_user_builder.get_object('new_user_password')
-		text1 = entry1.get_text()
+		#entry1 = new_user_builder.get_object('new_user_password')
+		text1 = entry.get_buffer().get_text()
+		print(entry.get_buffer().get_text(), text1)
 	#end
 	def new_user_submit(self, *args):
 		uname = text
 		passwd = text1
 		if type(text) != None:
 			with open(file, "w") as db:
-				db.write(uname + ": " + passwd)
+				db.write(uname + "," + passwd)
 				db.write('\n')
 				db.flush()
 				db.close()
@@ -44,6 +46,7 @@ class new_user_handler():
 		#end
 		else:
 			print("Cannot write info to file. No information given")
+			Gtk.main_quit()
 	#end
 #end
 #About
