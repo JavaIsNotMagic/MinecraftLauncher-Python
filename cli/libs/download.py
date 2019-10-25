@@ -70,36 +70,37 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 		else:
 			print(f"\nSkipping {parseUrlDict['fileName']}...")	#Debug
 			continue	#Continue to next iteration if the URL does not have the 'libraries' subdomain
-
-#	parseUrl regex documentation
-#		(?P<schema>	- Creates a new named capture group
-#			http	-Looks for the literal characters "http"
-#			[s]?	-Zero or more of the literal "s"
-#		)	-End named capture group
-#		:	-Literal ":"
-#		\/	-Literal "/"
-#		\/	-Literal "/"
-#		(?P<siteName>	-Named capture group
-#			(?P<subdomain>	-Named capture group
-#				.{1,12}	-1 to 12 of any character
-#			)	-Close capture group
-#			\.	-Literal "."
-#			(?P<domain>	-Named capture group
-#				.{1,10}	-1 to 10 of any character
-#			)	-Close capture group
-#			\.	-Literal "."
-#			(?P<tld>	-Named capture group
-#				.{2,3}	-2 to 3 characters
-#			)	-Close capture group
-#		)	-Close capture group
-#		\/	-LIteral "/"
-#		(?P<path>	-Named capture group
-#			.*	-Any amount of characters
-#			(?P<fileName>	-Named capture group
-#				\/	-Literal "/"
-#				.*	-Any amount of characters
-#				\.	-Literal "."
-#				.*	-Any amount of characters
-#			)	-Named capture group
-#			$	-Align capture group to end of line
-#		)	-Close capture group
+"""
+	parseUrl regex documentation
+		(?P<schema>	- Creates a new named capture group
+			http	-Looks for the literal characters "http"
+			[s]?	-Zero or more of the literal "s"
+		)	-End named capture group
+		:	-Literal ":"
+		\/	-Literal "/"
+		\/	-Literal "/"
+		(?P<siteName>	-Named capture group
+			(?P<subdomain>	-Named capture group
+				.{1,12}	-1 to 12 of any character
+			)	-Close capture group
+			\.	-Literal "."
+			(?P<domain>	-Named capture group
+				.{1,10}	-1 to 10 of any character
+			)	-Close capture group
+			\.	-Literal "."
+			(?P<tld>	-Named capture group
+				.{2,3}	-2 to 3 characters
+			)	-Close capture group
+		)	-Close capture group
+		\/	-LIteral "/"
+		(?P<path>	-Named capture group
+			.*	-Any amount of characters
+			(?P<fileName>	-Named capture group
+				\/	-Literal "/"
+				.*	-Any amount of characters
+				\.	-Literal "."
+				.*	-Any amount of characters
+			)	-Named capture group
+			$	-Align capture group to end of line
+		)	-Close capture group
+"""
