@@ -3,9 +3,9 @@ import gi,os
 path = os.getcwd()
 file = path + "/data/" + "database.db"
 global text
-text = None
+text = ""
 global text1
-text1 = None
+text1 = ""
 #GUI
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
