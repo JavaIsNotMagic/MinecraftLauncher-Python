@@ -35,21 +35,15 @@ class new_user_handler():
 	def new_user_submit(self, *args):
 		uname = text
 		passwd = text1
-		if type(uname) != None:
-			with open(file, "a") as db:
-				atoken = uuid.uuid4().hex
-				db.write(uname + "," + passwd + "," + atoken)
-				db.write('\n')
-				db.flush()
-				db.close()
-			#end
-			print("Wrote to file")
-			Gtk.main_quit()
+		with open(file, "a") as db:
+			atoken = uuid.uuid4().hex
+			db.write(uname + "," + passwd + "," + atoken)
+			db.write('\n')
+			db.flush()
+			db.close()
 		#end
-		else:
-			print("Cannot write info to file. No information given")
-			Gtk.main_quit()
-	#end
+		print("Wrote to file")
+		Gtk.main_quit()
 #end
 #About
 class about_menu:
