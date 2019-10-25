@@ -1,4 +1,4 @@
-import gi,os
+import gi,os,uuid
 #Other Imports
 path = os.getcwd()
 file = path + "/data/" + "database.db"
@@ -37,7 +37,8 @@ class new_user_handler():
 		passwd = text1
 		if type(text) != None:
 			with open(file, "a") as db:
-				db.write(uname + "," + passwd)
+				atoken = uuid.uuid4().hex
+				db.write(uname + "," + passwd + "," + atoken)
 				db.write('\n')
 				db.flush()
 				db.close()
