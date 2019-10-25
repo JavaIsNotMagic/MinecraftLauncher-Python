@@ -18,7 +18,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
-            <signal name="activate" handler="new_user_close" swapped="no"/>
+            <signal name="clicked" handler="new_user_close" swapped="no"/>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -31,7 +31,7 @@
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="placeholder_text" translatable="yes">Username</property>
-            <signal name="activate" handler="new_user_uname" swapped="no"/>
+            <signal name="changed" handler="new_user_uname" swapped="no"/>
           </object>
           <packing>
             <property name="expand">True</property>
@@ -46,7 +46,7 @@
             <property name="visibility">False</property>
             <property name="invisible_char">●</property>
             <property name="placeholder_text" translatable="yes">Password</property>
-            <signal name="activate" handler="new_user_password" swapped="no"/>
+            <signal name="changed" handler="new_user_password" swapped="no"/>
           </object>
           <packing>
             <property name="expand">True</property>
@@ -63,7 +63,7 @@
             <property name="receives_default">True</property>
             <property name="border_width">0</property>
             <property name="image_position">right</property>
-            <signal name="activate" handler="new_user_submit" swapped="no"/>
+            <signal name="clicked" handler="new_user_submit" swapped="no"/>
           </object>
           <packing>
             <property name="expand">False</property>
