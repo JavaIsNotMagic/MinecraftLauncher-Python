@@ -9,7 +9,7 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 #User Creation
 #Following: https://stackoverflow.com/questions/37837682/python-class-input-argument/37837766
-class new_user_handler(obj):
+class new_user_handler():
 	global text
 	global text1
 	def __init__(builder_obj):
