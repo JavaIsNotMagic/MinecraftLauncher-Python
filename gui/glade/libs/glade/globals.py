@@ -24,19 +24,19 @@ class new_user_handler():
 		print("Grabbed username")
 		#entry = new_user_builder.get_object('new_user_uname')
 		text = entry.get_buffer().get_text()
-		print(entry.get_buffer().get_text(), text)
+		##print(entry.get_buffer().get_text(), text)
 	#end
 	def new_user_password(self, entry, *args):	#The first argument for an editable (a text entry has a parent of an editable) when the changed signal is ran is the widget itself: https://developer.gnome.org/pygtk/stable/class-gtkeditable.html#signal-gtkeditable--changed
 		print("Grabbed password")
 		#entry1 = new_user_builder.get_object('new_user_password')
 		text1 = entry.get_buffer().get_text()
-		print(entry.get_buffer().get_text(), text1)
+		##print(entry.get_buffer().get_text(), text1)
 	#end
 	def new_user_submit(self, *args):
-		uname = text
-		passwd = text1
 		with open(file, "a") as db:
 			atoken = uuid.uuid4().hex
+			uname = text
+			passwd = text1
 			db.write(uname + "," + passwd + "," + atoken)
 			db.write('\n')
 			db.flush()
