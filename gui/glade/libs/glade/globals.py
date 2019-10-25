@@ -18,7 +18,7 @@ class new_user_handler():
 	#end
 	def new_user_close(self, *args):
 		print("Close window")
-		self.Destroy()
+		Gtk.main_quit()
 	#end
 	def new_user_uname(self, entry, *args):
 		print("Grabbed username")
@@ -44,23 +44,23 @@ class new_user_handler():
 				db.close()
 			#end
 			print("Wrote to file")
-			self.Destroy()
+			Gtk.main_quit()
 		#end
 		else:
 			print("Cannot write info to file. No information given")
-			self.Destroy()
+			Gtk.main_quit()
 	#end
 #end
 #About
 class about_menu:
 	def about_quit(self, *args):
-		self.Destroy()
+		Gtk.main_quit()
 	#end
 #end
 #Help Menu
 class help_handler:
 	def help_menu_quit(self, *args):
-		self.Destroy()
+		Gtk.main_quit()
 	#end
 	def help_menu_getting_started(self, *args):
 		print("Work in progress")
@@ -114,5 +114,5 @@ class handler:
 		Gtk.main()
 	#end
 	def menu_file_quit(self, *args):
-		self.Destroy()
+		Gtk.main_quit()
 #end

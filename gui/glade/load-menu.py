@@ -15,6 +15,7 @@ builder.add_from_file(path + "/glade-menus/" + "menu.glade")
 builder.connect_signals(handler())
 
 window = builder.get_object("window_menu")
+window.connect("destroy", Gtk.main_quit)
 window.show_all()
 
 Gtk.main()
