@@ -9,8 +9,6 @@ from gi.repository import Gtk
 lib_path = str(os.getcwd()) + "/libs/glade"
 sys.path.append(lib_path)
 from globals import handler
-#Do we really need this?
-#about_menu, help_handler, new_user_handler
 
 #Main
 builder = Gtk.Builder()

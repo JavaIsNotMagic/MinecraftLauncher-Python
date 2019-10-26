@@ -21,14 +21,13 @@ class new_user_handler():
 	def new_user_uname(self, entry, *args):
 		global text
 		print("Grabbed username")
-		#entry = new_user_builder.get_object('new_user_uname')
 		text = entry.get_buffer().get_text()
 		##print(entry.get_buffer().get_text(), text)
 	#end
-	def new_user_password(self, entry, *args):	#The first argument for an editable (a text entry has a parent of an editable) when the changed signal is ran is the widget itself: https://developer.gnome.org/pygtk/stable/class-gtkeditable.html#signal-gtkeditable--changed
-		global text1
+#The first argument for an editable (a text entry has a parent of an editable) when the changed signal is ran is the widget itself: https://developer.gnome.org/pygtk/stable/class-gtkeditable.html#signal-gtkeditable--changed
+	global text1
+	def new_user_password(self, entry, *args):
 		print("Grabbed password")
-		#entry1 = new_user_builder.get_object('new_user_password')
 		text1 = entry.get_buffer().get_text()
 		##print(entry.get_buffer().get_text(), text1)
 	#end
