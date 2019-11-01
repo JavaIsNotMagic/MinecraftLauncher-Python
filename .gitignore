@@ -15,3 +15,6 @@
 
 #Don't give away how we store user information. Better safe than sorry.
 /gui/libs/enc/*
+
+#Ignore any testing directories
+/**/testing/*

@@ -49,6 +49,17 @@ except:
 	pass	#Ignore if folder exists
 #end
 def downloadLibs(file2):	#Download libraries used by Minecraft
+	cp = "/downloads/mc/data/classpath.txt"
+	try:
+		with open(cp, "a+") as cd:
+			cd.write("HEADER")
+			cd.write('\n')
+			cd.flush()
+			cd.close()
+	except:
+		print("Cannot create classpath file")
+		sys.exit(1)
+	#end
 	file = open(file2, "r")	#Open the file specified in read only mode
 	fileOutput = file.readlines()	#Get the content of the file line by line
 	for line in fileOutput:	#For every line
@@ -62,11 +73,23 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 				if not(os.path.isdir(currentPath)):	#If the folder doesn't exists:
 					os.mkdir(currentPath)	#Attempt to make the folde
 			savePath = f"{jarPath}/{parseUrlDict['path']}"	#Path of the file to save
-			try:
-				ur.urlretrieve(line, savePath)	#Download the file at the given URL and then save it to the specified path
+			try:#Download the file at the given URL and then save it to the specified path
+				ur.urlretrieve(line, savePath)
+				#Now save that path to the classpath.
+				with open(cp, "a") as r:
+					if sys.platform.startswith('nt'):
+						sep = ';'
+					else:
+						sep = ":"
+					#End
+					r.write(savePath + sep)
+					r.flush()
+					r.close()
+					print("Wrote path: " + savepath + " to classpath")
+					print(f"Saved to {savePath}")	#Debug
 			except:
 				print(f"Error downloading {parseUrlDict['fileName']}.")
-			print(f"Saved to {savePath}")	#Debug
+				sys.exit(1)
 		else:
 			print(f"\nSkipping {parseUrlDict['fileName']}...")	#Debug
 			continue	#Continue to next iteration if the URL does not have the 'libraries' subdomain
