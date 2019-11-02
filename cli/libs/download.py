@@ -1,7 +1,10 @@
-import re,sys,os
+import re,sys,os,traceback
 import urllib.request as ur
 import urllib.error as ue
 from urllib.parse import urlparse as up
+libs_path = str(os.getcwd())+ "/libs"
+sys.path.append(libs_path)
+import utils
 #main
 def getVersionUrl(file1, version, dp):
 	#Don't even ask. It works. That's all that matters
@@ -49,10 +52,9 @@ except:
 	pass	#Ignore if folder exists
 #end
 def downloadLibs(file2):	#Download libraries used by Minecraft
-	cp = "/downloads/mc/data/classpath.txt"
+	cp = str(os.getcwd()) + "/downloads/mc/data/classpath.txt"
 	try:
-		with open(cp, "a+") as cd:
-			cd.write("HEADER")
+		with open(cp, "w+") as cd:
 			cd.write('\n')
 			cd.flush()
 			cd.close()
@@ -85,11 +87,19 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 					r.write(savePath + sep)
 					r.flush()
 					r.close()
-					print("Wrote path: " + savepath + " to classpath")
-					print(f"Saved to {savePath}")	#Debug
+					#print("Wrote path: " + savePath + " to classpath") # DEBUG
+					#print(f"Saved to {savePath}")	#Debug
 			except:
 				print(f"Error downloading {parseUrlDict['fileName']}.")
-				sys.exit(1)
+				exc_type, exc_value, exc_traceback = sys.exc_info()
+				trace_back = traceback.extract_tb(exc_traceback)
+		        # Format stacktrace
+				stack_trace = list()
+				for trace in trace_back:
+					stack_trace.append("File : %s , Line : %d, Func.Name : %s, Message : %s" % (trace[0], trace[1], trace[2], trace[3]))
+					print("Exception type : %s " % exc_type.__name__)
+					print("Exception message : %s" %exc_value)
+					print("Stack trace : %s" %stack_trace)
 		else:
 			print(f"\nSkipping {parseUrlDict['fileName']}...")	#Debug
 			continue	#Continue to next iteration if the URL does not have the 'libraries' subdomain
@@ -127,3 +137,37 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 			$	-Align capture group to end of line
 		)	-Close capture group
 """
+#End
+resourcePath = str(os.getcwd()) + "/downloads/mc/assets"
+jsonPath = str(os.getcwd()) + "/downloads/mc/data/data.json"
+jsonPath1 = str(os.getcwd()) + "/downloads/mc/data/resources.json"
+try:
+	os.mkdir(resourcePath)	#Attempt to create the folder
+	print("Created path for MC Assets!")
+except:
+	pass	#Ignore if folder exists
+#end
+def downloadResources(version, dp):
+	utils.decode_urls(dp, jsonPath1)
+	with open(jsonPath1) as f:
+		for line in f.readlines():
+			if version in line:
+				ur.urlretrieve(line, jsonPath)
+		f.close()
+	#end
+	with open(jsonPath, 'r') as p:
+		for line in p:
+			parseUrl = re.search(r'(?P<schema>http[s]?):\/\/(?P<siteName>(?P<subdomain>.{1,12})\.(?P<domain>.{1,10})\.(?P<tld>.{2,3}))\/(?P<path>.*(?P<fileName>\/.*\..*)$)', line.strip())	#Searches line using specified regex
+			parseUrlDict = parseUrl.groupdict()	#Gets groups from regex result as a dictionary
+			#If the subdomain of the URL is a library:
+			print(f"\nDownloading {parseUrlDict['fileName']}...")	#Debug
+			currentPath = f"{resourcePath}"	#Reset string
+			for i in parseUrlDict['path'].split("/")[:-1]:	#Iterate through all parts of the path (except for the last which is the file)
+				currentPath += "/" + i	#Add the folder name with a slash before it
+				if not(os.path.isdir(currentPath)):	#If the folder doesn't exists:
+					os.mkdir(currentPath)	#Attempt to make the folde
+					savePath = f"{resourcePath}/{parseUrlDict['path']}"
+			#End
+		#End
+	#End
+#End

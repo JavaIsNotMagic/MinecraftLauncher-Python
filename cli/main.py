@@ -74,6 +74,7 @@ if ans == 1:
 	download.getVersionUrl(write_path, version, version_decoded)
 	utils.decode_urls(version_decoded, download_urls)
 	download.downloadLibs(download_urls)
+	download.downloadResources(version, download_path)
 	clean.clean()
 #end
 
@@ -84,6 +85,7 @@ if ans == 2:
 	download.getVersionUrl(write_path, version, version_decoded)
 	utils.decode_urls(version_decoded, download_urls)
 	download.downloadLibs(download_urls)
+	download.downloadResources(version, download_path)
 	clean.clean()
 #end
 
@@ -94,6 +96,7 @@ if ans == 3:
 	download.getVersionUrl(write_path, version, version_decoded)
 	utils.decode_urls(version_decoded, download_urls)
 	download.downloadLibs(download_urls)
+	download.downloadResources(version, download_path)
 	clean.clean()
 #Alpha
 if ans == 4:
@@ -102,5 +105,6 @@ if ans == 4:
 	download.getVersionUrl(write_path, version, version_decoded)
 	utils.decode_urls(version_decoded, download_urls)
 	download.downloadLibs(download_urls)
+	download.downloadResources(version, download_path)
 	clean.clean()
 #end
