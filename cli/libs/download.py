@@ -192,11 +192,12 @@ def downloadResources(version, dp):
 		while n < 256:
 			url = resource_base + hash_two[n] + "/" + hash_full[n]
 			file_path = resourcePath + hash_two[n] + "/" + hash_full[n]
-			#print(file_path)
+			#print(file_path) ## DEBUG:
+			print("Downloading file: " + url + '\n')
+			ur.urlretrieve(url, file_path)
+			print("File Downloaded." + '\n')
+			n += 1
 		#end
-		print("Downloading file: " + url + '\n')
-		ur.urlretrieve(url, file_path)
-		print("File Downloaded." + '\n')
-		n += 1
+
 	#end
 #end

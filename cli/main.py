@@ -13,6 +13,9 @@ try:
 		sys.exit(20)
 	else:
 		pass
+	if sys.argv[1] == 'clean-assets':
+		clean.assets()
+		sys.exit(20)
 except IndexError:
 	pass
 #end
