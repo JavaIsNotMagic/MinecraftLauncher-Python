@@ -23,7 +23,20 @@ def clean():
 #end
 resourcePath = str(os.getcwd()) + "/downloads/mc/assets/objects/"
 def assets():
-	for i in os.walk(resourcePath):
-		os.remove(i[0])
+	n = 0
+	while n < 256:
+		for i in os.walk(resourcePath):
+				if i[0] == resourcePath:
+					pass
+				else:
+					if os.path.isfile(i[0]):
+						os.remove(i[0])
+					else:
+						pass
+					#end
+				#end
+			#end
+		#end
 	#end
-#end 
+	n +=1
+#end
