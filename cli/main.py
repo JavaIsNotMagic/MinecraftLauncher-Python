@@ -6,6 +6,7 @@ import urllib.error as ue
 libs_path = str(os.getcwd())+ "/libs"
 sys.path.append(libs_path)
 import selection, download, clean, utils
+from Launcher import Launch
 #CLI Check
 try:
 	if sys.argv[1] == 'clean':
@@ -78,6 +79,8 @@ if ans == 1:
 	utils.decode_urls(version_decoded, download_urls)
 	download.downloadLibs(download_urls)
 	download.downloadResources(version, download_path)
+	print("Launching Minecraft " + version)
+	Launch()
 	clean.clean()
 #end
 
