@@ -2,7 +2,8 @@ import re,sys,os,traceback
 import urllib.request as ur
 import urllib.error as ue
 from urllib.parse import urlparse as up
-from flashtext import KeywordProcessor
+from pprint import pprint as pp
+import json
 libs_path = str(os.getcwd())+ "/libs"
 sys.path.append(libs_path)
 import utils
@@ -139,7 +140,7 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 		)	-Close capture group
 """
 #End
-resourcePath = str(os.getcwd()) + "/downloads/mc/assets"
+resourcePath = str(os.getcwd()) + "/downloads/mc/assets/objects/"
 jsonPath = str(os.getcwd()) + "/downloads/mc/data/data.json"
 jsonPath1 = str(os.getcwd()) + "/downloads/mc/data/resources.json"
 dp1 = str(os.getcwd()) + "/downloads/mc/data/full.json"
@@ -168,10 +169,34 @@ def downloadResources(version, dp):
 				ur.urlretrieve(line, assets_list)
 				print("done.")
 	f.close()
+	hash_two = []
+	hash_full = []
 	with open(assets_list) as f:
-		for line in f.readlines():
-			if "hash" in line:
-				print(line)
+		my_dict = json.load(f)
+		for i in my_dict['objects'].keys():
+			hash_full_obj = my_dict['objects'][i]['hash']
+			hash_first_two = my_dict['objects'][i]['hash'][:2]
+			hash_two.append(hash_first_two)
+			hash_full.append(hash_full_obj)
+			#print("Full hash: " + hash_full) #Debug
+			#print("First two: " + hash_first_two) #Debug
 		#end
+		for x in hash_two:
+			currentPath = resourcePath + x
+			if not(os.path.isdir(currentPath)):
+				os.mkdir(currentPath)
+			#end
+		#end
+		#Now donload the files to the folders
+		n = 0
+		while n < 256:
+			url = resource_base + hash_two[n] + "/" + hash_full[n]
+			file_path = resourcePath + hash_two[n] + "/" + hash_full[n]
+			#print(file_path)
+		#end
+		print("Downloading file: " + url + '\n')
+		ur.urlretrieve(url, file_path)
+		print("File Downloaded." + '\n')
+		n += 1
 	#end
 #end
