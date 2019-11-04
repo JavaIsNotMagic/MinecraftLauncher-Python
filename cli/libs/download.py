@@ -2,6 +2,7 @@ import re,sys,os,traceback
 import urllib.request as ur
 import urllib.error as ue
 from urllib.parse import urlparse as up
+from flashtext import KeywordProcessor
 libs_path = str(os.getcwd())+ "/libs"
 sys.path.append(libs_path)
 import utils
@@ -141,6 +142,9 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 resourcePath = str(os.getcwd()) + "/downloads/mc/assets"
 jsonPath = str(os.getcwd()) + "/downloads/mc/data/data.json"
 jsonPath1 = str(os.getcwd()) + "/downloads/mc/data/resources.json"
+dp1 = str(os.getcwd()) + "/downloads/mc/data/full.json"
+assets_list = str(os.getcwd()) + "/downloads/mc/data/assets.json"
+resource_base = "http://resources.download.minecraft.net/"
 try:
 	os.mkdir(resourcePath)	#Attempt to create the folder
 	print("Created path for MC Assets!")
@@ -152,22 +156,22 @@ def downloadResources(version, dp):
 	with open(jsonPath1) as f:
 		for line in f.readlines():
 			if version in line:
+				#print(line)
 				ur.urlretrieve(line, jsonPath)
-		f.close()
+				utils.decode_urls(jsonPath, dp1)
+				print("Done.")
+	f.close()
+	with open(dp1) as f:
+		for line in f.readlines():
+			if ".json" in line:
+				#print(line)
+				ur.urlretrieve(line, assets_list)
+				print("done.")
+	f.close()
+	with open(assets_list) as f:
+		for line in f.readlines():
+			if "hash" in line:
+				print(line)
+		#end
 	#end
-	with open(jsonPath, 'r') as p:
-		for line in p:
-			parseUrl = re.search(r'(?P<schema>http[s]?):\/\/(?P<siteName>(?P<subdomain>.{1,12})\.(?P<domain>.{1,10})\.(?P<tld>.{2,3}))\/(?P<path>.*(?P<fileName>\/.*\..*)$)', line.strip())	#Searches line using specified regex
-			parseUrlDict = parseUrl.groupdict()	#Gets groups from regex result as a dictionary
-			#If the subdomain of the URL is a library:
-			print(f"\nDownloading {parseUrlDict['fileName']}...")	#Debug
-			currentPath = f"{resourcePath}"	#Reset string
-			for i in parseUrlDict['path'].split("/")[:-1]:	#Iterate through all parts of the path (except for the last which is the file)
-				currentPath += "/" + i	#Add the folder name with a slash before it
-				if not(os.path.isdir(currentPath)):	#If the folder doesn't exists:
-					os.mkdir(currentPath)	#Attempt to make the folde
-					savePath = f"{resourcePath}/{parseUrlDict['path']}"
-			#End
-		#End
-	#End
-#End
+#end
