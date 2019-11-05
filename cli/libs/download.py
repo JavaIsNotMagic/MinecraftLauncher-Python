@@ -1,3 +1,16 @@
+"""
+re: Regex module, for URL parsing. see docs/regex/parseUrl.help for more info
+sys: System module, various helper tasks.
+os: Operating System module, helper for file I/O operations (File exists check, etc)
+traceback: Complex error report and capture module
+urllib.request: Used to download files from the internet
+urllib.error: Error classes for urllib.request. Needed for urllib.*
+urlparse: General URL classes.
+json: JSON handler module: needed to decode Minecraft's .json files
+pprint: Pretty printer. Used for debugging
+utils: various helper functions
+"""
+
 import re,sys,os,traceback
 import urllib.request as ur
 import urllib.error as ue
