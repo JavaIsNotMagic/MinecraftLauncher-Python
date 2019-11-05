@@ -1,3 +1,7 @@
+"""
+re: Regex module, for URL parsing. see docs/regex/parseUrl.help for more info
+os: Operating System module, helper for file I/O operations (File exists check, etc)
+"""
 import re, os
 def decode_urls(dp, wp):
 	f = open(dp, "r")

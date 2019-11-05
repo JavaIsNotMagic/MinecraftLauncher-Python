@@ -1,3 +1,7 @@
+"""
+sys: System module, various helper tasks.
+os: Operating System module, helper for file I/O operations (File exists check, etc)
+"""
 import os,sys
 from pprint import pprint as pp
 libs_path = str(os.getcwd())+ "/libs"
