@@ -1,5 +1,4 @@
-"""
-	parseUrl regex documentation
+parseUrl regex documentation
 		(?P<schema>	- Creates a new named capture group
 			http	-Looks for the literal characters "http"
 			[s]?	-Zero or more of the literal "s"
@@ -31,4 +30,3 @@
 			)	-Named capture group
 			$	-Align capture group to end of line
 		)	-Close capture group
-"""
