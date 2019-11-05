@@ -18,3 +18,9 @@
 
 #Ignore any testing directories
 /**/testing/*
+
+#Ignore Minecraft Assets
+cli/downloads/mc/assets/*
+
+#Ignore Minecraft Data
+cli/downloads/mc/data/*
