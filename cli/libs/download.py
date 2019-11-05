@@ -2,8 +2,10 @@ import re,sys,os,traceback
 import urllib.request as ur
 import urllib.error as ue
 from urllib.parse import urlparse as up
-from pprint import pprint as pp
 import json
+#from pprint import pprint as pp
+
+#Custom Libs
 libs_path = str(os.getcwd())+ "/libs"
 sys.path.append(libs_path)
 import utils
