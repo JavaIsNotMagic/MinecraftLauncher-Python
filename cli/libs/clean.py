@@ -1,3 +1,6 @@
+"""
+os: Operating System Module, various file I/O operations.
+"""
 import os
 write_path = str(os.getcwd()) + "/downloads/urls.txt"
 download_path_mc = str(os.getcwd()) + "/downloads/mc/data/download_urls.txt"
