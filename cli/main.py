@@ -1,4 +1,16 @@
 #!/usr/bin/env python3
+"""
+re: Regex module, for URL parsing. see docs/regex/parseUrl.help for more info
+sys: System module, various helper tasks.
+os: Operating System module, helper for file I/O operations (File exists check, etc)
+urllib.request: Used to download files from the internet
+urllib.error: Error classes for urllib.request. Needed for urllib.*
+selection: Helper module to select version to launch
+download: Various helper functions to download Minecraft's assets and libraries
+clean: Cleanup after launch. Removes temporary files
+utils: various helper functions
+"""
+
 import re, os, sys
 import urllib.request
 import urllib.error as ue
