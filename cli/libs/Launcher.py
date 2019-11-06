@@ -1,5 +1,6 @@
 import subprocess
 def Launch(uname, version, game_directory, assets_root, atoken, classpath, client):
-    args = f"java -cp {classpath} -jar {client} mainClass net.minecraft.client.main.Main --username {uname} --version {version} --gameDir {game_directory} --assetsDir {assets_root} --assetIndex {version} --uuid {atoken} --accessToken {atoken} --userProperties --userType legacy"
-    subprocess.run(args, shell=False, check=True)
+    empty = "{}"
+    args = f"java -jar {client} -cp {classpath} --username {uname} --version {version} --gameDir {game_directory} --assetsDir {assets_root} --assetIndex {version} --uuid {atoken} --accessToken {atoken} --userProperties {empty} --userType legacy"
+    subprocess.run(["java", args], shell=False, check=True)
 #end
