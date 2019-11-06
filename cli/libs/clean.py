@@ -7,11 +7,10 @@ def clean():
 	#Final stage
 	print("Stage Five: Cleanup.")
 	for i in os.walk(downloads):
-		#Don't delete the downloads folder
-		if i[0] == downloads:
-			pass
-		else:
+		try:
 			os.remove(i[0])
+		except IsADirectoryError:
+			pass
 		#end
 	#end
 #end

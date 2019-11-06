@@ -41,7 +41,7 @@ version_decoded = str(os.getcwd() + "/downloads/version_decoded.txt")
 download_urls = str(os.getcwd() + "/downloads/mc/data/download_urls.txt")
 url = "https://launchermeta.mojang.com/mc/game/version_manifest.json"
 path = str(os.getcwd())
-client = path + "/downloads/client.jar"
+client = path + "/downloads/mc/client.jar"
 cp = path + "/downloads/mc/data/classpath.txt"
 classpath = read_file(cp)
 try:
@@ -51,7 +51,8 @@ try:
 except FileExistsError:
 	pass
 #end
-uname = input("Berfore we begin, please enter your desired in-game username: ")
+uname = input("Berfore we begin, please enter your desired in-game username: ")\
+print("Thank you for using PyMC " + uname + "!")
 print("Decoding Minecraft assets at path " + path)
 print("Stage one: Download Version Manifest")
 try:
