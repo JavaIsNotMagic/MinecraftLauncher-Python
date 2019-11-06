@@ -72,7 +72,12 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 	cp = str(os.getcwd()) + "/downloads/mc/data/classpath.txt"
 	try:
 		with open(cp, "w+") as cd:
-			cd.write('\n')
+			if sys.platform.startswith('nt'):
+				sep = ';'
+			else:
+				sep = ":"
+			#End
+			cd.write(sep)
 			cd.flush()
 			cd.close()
 	except:
