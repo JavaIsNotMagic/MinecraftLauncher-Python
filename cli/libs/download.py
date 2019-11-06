@@ -77,7 +77,7 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 			else:
 				sep = ":"
 			#End
-			cd.write(sep)
+			cd.write('\n')
 			cd.flush()
 			cd.close()
 	except:
@@ -108,9 +108,14 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 					else:
 						sep = ":"
 					#End
-					r.write(savePath + sep)
-					r.flush()
-					r.close()
+					rpath = "/home/ctozer/Desktop/Development/Python/json-decoder/cli/downloads/mc/jars/tv/twitch/twitch-platform/5.16/twitch-platform-5.16-natives-windows-64.jar:/home/ctozer/Desktop/Development/Python/json-decoder/cli/downloads/mc/jars/tv/twitch/twitch-external-platform/4.5/twitch-external-platform-4.5-natives-windows-32.jar:/home/ctozer/Desktop/Development/Python/json-decoder/cli/downloads/mc/jars/tv/twitch/twitch-external-platform/4.5/twitch-external-platform-4.5-natives-windows-64.jar"
+					if savePath == rpath:
+						r.flush()
+						r.close()
+					else:
+						r.write(savePath + sep)
+						r.flush()
+						r.close()
 					#print("Wrote path: " + savePath + " to classpath") # DEBUG
 					#print(f"Saved to {savePath}")	#Debug
 			except:
