@@ -85,7 +85,8 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 		parseUrl = re.search(r'(?P<schema>http[s]?):\/\/(?P<siteName>(?P<subdomain>.{1,12})\.(?P<domain>.{1,10})\.(?P<tld>.{2,3}))\/(?P<path>.*(?P<fileName>\/.*\..*)$)', line.strip())	#Searches line using specified regex
 		parseUrlDict = parseUrl.groupdict()	#Gets groups from regex result as a dictionary
 		if parseUrlDict['subdomain'] == 'libraries':	#If the subdomain of the URL is a library:
-			print(f"\nDownloading {parseUrlDict['fileName']}...")	#Debug
+			file_name = parseUrlDict['fileName'].strip("/")
+			print(f"\nDownloading {file_name}...")	#Debug
 			currentPath = f"{jarPath}"	#Reset string
 			for i in parseUrlDict['path'].split("/")[:-1]:	#Iterate through all parts of the path (except for the last which is the file)
 				currentPath += "/" + i	#Add the folder name with a slash before it
@@ -183,7 +184,7 @@ def downloadResources(version, dp):
 			ur.urlretrieve(url, file_path)
 			#Check that the file was actually downloaded.
 			if os.path.exists(file_path):
-				print("File downloaded.") #debug 
+				#print("File downloaded.") #debug
 				n += 1
 			else:
 				print("Cannot download file " + file_path)
