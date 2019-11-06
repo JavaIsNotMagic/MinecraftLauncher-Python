@@ -27,7 +27,7 @@ try:
 	else:
 		pass
 	if sys.argv[1] == 'clean-assets':
-		clean.assets()
+
 		sys.exit(20)
 except IndexError:
 	pass
@@ -94,7 +94,7 @@ if ans == 1:
 	print("Launching Minecraft " + version)
 	Launch()
 	clean.clean()
-	clean.assets()
+
 #end
 
 #Snapshot
@@ -107,7 +107,7 @@ if ans == 2:
 	download.downloadResources(version, download_path)
 	Launch()
 	clean.clean()
-	clean.assets()
+
 #end
 
 #Beta
@@ -120,7 +120,7 @@ if ans == 3:
 	download.downloadResources(version, download_path)
 	Launch()
 	clean.clean()
-	clean.assets()
+
 #Alpha
 if ans == 4:
 	version = selection.pa()
@@ -131,5 +131,5 @@ if ans == 4:
 	download.downloadResources(version, download_path)
 	Launch()
 	clean.clean()
-	clean.assets()
+	
 #end
