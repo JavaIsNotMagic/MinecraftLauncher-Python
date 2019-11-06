@@ -57,14 +57,14 @@ print("Decoding Minecraft assets at path " + path)
 print("Stage one: Download Version Manifest")
 try:
 	if os.path.isfile(download_path):
-		print("Done")
+		#print("Done")
 		pass
 	else:
 		urllib.request.urlretrieve(url, download_path)
-		print("Done")
+		#print("Done")
 		print("Stage two: Seperate URLs from Version Manifest")
 		if os.path.isfile(write_path):
-			print("Done")
+			#print("Done")
 			pass
 		else:
 			utils.decode_urls(download_path, write_path)

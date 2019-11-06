@@ -190,16 +190,13 @@ def downloadResources(version, dp):
 				pass
 			#end
 			file_path = resourcePath + hash_two[n] + "/" + hash_full[n]
-			#print(file_path) ## DEBUG:
-			print("Downloading file " + str(n) + " of " + str(catch_all))
-			ur.urlretrieve(url, file_path)
-			#Check that the file was actually downloaded.
 			if os.path.exists(file_path):
-				#print("File downloaded.") #debug
 				n += 1
 			else:
-				print("Cannot download file " + file_path)
-				sys.exit(12)
+				print("Downloading file " + str(n) + " of " + str(catch_all))
+				ur.urlretrieve(url, file_path)
+				n+=1
+			#print(file_path) ## DEBUG:
 		#end
 	#end
 #end
