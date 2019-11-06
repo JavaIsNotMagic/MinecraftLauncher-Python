@@ -51,7 +51,7 @@ try:
 except FileExistsError:
 	pass
 #end
-uname = input("Berfore we begin, please enter your desired in-game username: ")\
+uname = input("Berfore we begin, please enter your desired in-game username: ")
 print("Thank you for using PyMC " + uname + "!")
 print("Decoding Minecraft assets at path " + path)
 print("Stage one: Download Version Manifest")
