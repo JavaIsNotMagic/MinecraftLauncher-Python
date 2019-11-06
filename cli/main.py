@@ -41,9 +41,6 @@ version_decoded = str(os.getcwd() + "/downloads/version_decoded.txt")
 download_urls = str(os.getcwd() + "/downloads/mc/data/download_urls.txt")
 url = "https://launchermeta.mojang.com/mc/game/version_manifest.json"
 path = str(os.getcwd())
-client = path + "/downloads/mc/client.jar"
-cp = path + "/downloads/mc/data/classpath.txt"
-classpath = read_file(cp)
 try:
 	os.mkdir(str(os.getcwd()) + "/downloads")
 	os.mkdir(str(os.getcwd()) + "/downloads/mc")
@@ -100,6 +97,9 @@ if ans == 1:
 	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
+	client = path + "/downloads/mc/client.jar"
+	cp = path + "/downloads/mc/data/classpath.txt"
+	classpath = read_file(cp)
 	Launch(uname, version, gameDir, assetsDir, atoken, client, classpath)
 	clean.clean()
 
@@ -116,6 +116,9 @@ if ans == 2:
 	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
+	client = path + "/downloads/mc/client.jar"
+	cp = path + "/downloads/mc/data/classpath.txt"
+	classpath = read_file(cp)
 	Launch(uname, version, gameDir, assetsDir, atoken, client, classpath)
 	clean.clean()
 
@@ -132,6 +135,9 @@ if ans == 3:
 	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
+	client = path + "/downloads/mc/client.jar"
+	cp = path + "/downloads/mc/data/classpath.txt"
+	classpath = read_file(cp)
 	Launch(uname, version, gameDir, assetsDir, atoken, client, classpath)
 	clean.clean()
 
@@ -146,6 +152,9 @@ if ans == 4:
 	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
+	client = path + "/downloads/mc/client.jar"
+	cp = path + "/downloads/mc/data/classpath.txt"
+	classpath = read_file(cp)
 	Launch(uname, version, gameDir, assetsDir, atoken, client, classpath)
 	clean.clean()
 

@@ -1,0 +1,15 @@
+[17:33:12] [main/INFO]: Loading tweak class name net.minecraft.launchwrapper.VanillaTweaker
+[17:33:12] [main/INFO]: Using primary tweak class name net.minecraft.launchwrapper.VanillaTweaker
+[17:33:12] [main/INFO]: Calling tweak class net.minecraft.launchwrapper.VanillaTweaker
+[17:33:12] [main/ERROR]: Unable to launch
+java.lang.ClassNotFoundException: net.minecraft.client.Minecraft
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:191) ~[launchwrapper-1.12.jar:?]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[?:1.8.0_222]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[?:1.8.0_222]
+	at java.lang.Class.forName0(Native Method) ~[?:1.8.0_222]
+	at java.lang.Class.forName(Class.java:348) ~[?:1.8.0_222]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:131) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+Caused by: java.lang.NullPointerException
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:182) ~[launchwrapper-1.12.jar:?]
+	... 6 more
