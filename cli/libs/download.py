@@ -170,14 +170,24 @@ def downloadResources(version, dp):
 		#end
 		#Now donload the files to the folders
 		n = 0
-		catch_all = len(hash_full)
+		catch_all = len(hash_full) - 1
 		while n <= catch_all:
-			url = resource_base + hash_two[n] + "/" + hash_full[n]
+			try:
+				url = resource_base + hash_two[n] + "/" + hash_full[n]
+			except IndexError:
+				pass
+			#end
 			file_path = resourcePath + hash_two[n] + "/" + hash_full[n]
 			#print(file_path) ## DEBUG:
-			print("Downloading file: " + str(n) + " of " + str(catch_all))
+			print("Downloading file " + str(n) + " of " + str(catch_all))
 			ur.urlretrieve(url, file_path)
-			n += 1
+			#Check that the file was actually downloaded.
+			if os.path.exists(file_path):
+				print("File downloaded.") #debug 
+				n += 1
+			else:
+				print("Cannot download file " + file_path)
+				sys.exit(12)
 		#end
 	#end
 #end
