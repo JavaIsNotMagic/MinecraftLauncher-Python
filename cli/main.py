@@ -94,6 +94,7 @@ if ans == 1:
 	print("Launching Minecraft " + version)
 	Launch()
 	clean.clean()
+	clean.assets()
 #end
 
 #Snapshot
@@ -104,7 +105,9 @@ if ans == 2:
 	utils.decode_urls(version_decoded, download_urls)
 	download.downloadLibs(download_urls)
 	download.downloadResources(version, download_path)
+	Launch()
 	clean.clean()
+	clean.assets()
 #end
 
 #Beta
@@ -115,7 +118,9 @@ if ans == 3:
 	utils.decode_urls(version_decoded, download_urls)
 	download.downloadLibs(download_urls)
 	download.downloadResources(version, download_path)
+	Launch()
 	clean.clean()
+	clean.assets()
 #Alpha
 if ans == 4:
 	version = selection.pa()
@@ -124,5 +129,7 @@ if ans == 4:
 	utils.decode_urls(version_decoded, download_urls)
 	download.downloadLibs(download_urls)
 	download.downloadResources(version, download_path)
+	Launch()
 	clean.clean()
+	clean.assets()
 #end
