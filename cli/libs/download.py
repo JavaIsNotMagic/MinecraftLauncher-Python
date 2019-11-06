@@ -51,7 +51,7 @@ def getVersionUrl(file1, version, dp):
 	if flag:
 		try:
 			ur.urlretrieve(line, dp)
-			print("Done!")
+			#print("Done!")
 		except ue.URLError:
 			print("Version " + version + " not found.")
 			sys.exit(1)
@@ -170,13 +170,13 @@ def downloadResources(version, dp):
 		#end
 		#Now donload the files to the folders
 		n = 0
-		while n < 256:
+		catch_all = len(hash_full)
+		while n <= catch_all:
 			url = resource_base + hash_two[n] + "/" + hash_full[n]
 			file_path = resourcePath + hash_two[n] + "/" + hash_full[n]
 			#print(file_path) ## DEBUG:
-			print("Downloading file: " + url + '\n')
+			print("Downloading file: " + str(n) + " of " + str(catch_all))
 			ur.urlretrieve(url, file_path)
-			print("File Downloaded." + '\n')
 			n += 1
 		#end
 	#end
