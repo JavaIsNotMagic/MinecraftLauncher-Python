@@ -14,11 +14,13 @@ utils: various helper functions
 import re, os, sys
 import urllib.request
 import urllib.error as ue
+import uuid
 #Custom libs
 libs_path = str(os.getcwd())+ "/libs"
 sys.path.append(libs_path)
 import selection, download, clean, utils
 from Launcher import Launch
+from FileUtils import read_file
 #CLI Check
 try:
 	if sys.argv[1] == 'clean':
@@ -39,7 +41,9 @@ version_decoded = str(os.getcwd() + "/downloads/version_decoded.txt")
 download_urls = str(os.getcwd() + "/downloads/mc/data/download_urls.txt")
 url = "https://launchermeta.mojang.com/mc/game/version_manifest.json"
 path = str(os.getcwd())
-
+client = path + "/downloads/client.jar"
+cp = path + "/downloads/mc/data/classpath.txt"
+classpath = read_file(cp)
 try:
 	os.mkdir(str(os.getcwd()) + "/downloads")
 	os.mkdir(str(os.getcwd()) + "/downloads/mc")
@@ -47,7 +51,7 @@ try:
 except FileExistsError:
 	pass
 #end
-
+uname = input("Berfore we begin, please enter your desired in-game username: ")
 print("Decoding Minecraft assets at path " + path)
 print("Stage one: Download Version Manifest")
 try:
@@ -92,7 +96,10 @@ if ans == 1:
 	download.downloadLibs(download_urls)
 	download.downloadResources(version, download_path)
 	print("Launching Minecraft " + version)
-	Launch()
+	gameDir = str(os.getcwd()) + "/game"
+	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
+	atoken = uuid.uuid4().hex
+	Launch(uname, version, gameDir, assetsDir, atoken, client, classpath)
 	clean.clean()
 
 #end
@@ -105,7 +112,10 @@ if ans == 2:
 	utils.decode_urls(version_decoded, download_urls)
 	download.downloadLibs(download_urls)
 	download.downloadResources(version, download_path)
-	Launch()
+	gameDir = str(os.getcwd()) + "/game"
+	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
+	atoken = uuid.uuid4().hex
+	Launch(uname, version, gameDir, assetsDir, atoken, client, classpath)
 	clean.clean()
 
 #end
@@ -118,7 +128,10 @@ if ans == 3:
 	utils.decode_urls(version_decoded, download_urls)
 	download.downloadLibs(download_urls)
 	download.downloadResources(version, download_path)
-	Launch()
+	gameDir = str(os.getcwd()) + "/game"
+	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
+	atoken = uuid.uuid4().hex
+	Launch(uname, version, gameDir, assetsDir, atoken, client, classpath)
 	clean.clean()
 
 #Alpha
@@ -129,7 +142,10 @@ if ans == 4:
 	utils.decode_urls(version_decoded, download_urls)
 	download.downloadLibs(download_urls)
 	download.downloadResources(version, download_path)
-	Launch()
+	gameDir = str(os.getcwd()) + "/game"
+	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
+	atoken = uuid.uuid4().hex
+	Launch(uname, version, gameDir, assetsDir, atoken, client, classpath)
 	clean.clean()
-	
+
 #end

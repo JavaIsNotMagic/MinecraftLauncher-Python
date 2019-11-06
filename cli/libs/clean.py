@@ -6,7 +6,7 @@ downloads = str(os.getcwd()) + "/downloads/"
 def clean():
 	#Final stage
 	print("Stage Five: Cleanup.")
-	for i in os.path.walk(downloads):
+	for i in os.walk(downloads):
 		#Don't delete the downloads folder
 		if i[0] == downloads:
 			pass

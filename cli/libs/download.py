@@ -81,11 +81,12 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 	#end
 	file = open(file2, "r")	#Open the file specified in read only mode
 	fileOutput = file.readlines()	#Get the content of the file line by line
+	client_path = str(os.getcwd()) + "/downloads/mc/client.jar"
 	for line in fileOutput:	#For every line
 		parseUrl = re.search(r'(?P<schema>http[s]?):\/\/(?P<siteName>(?P<subdomain>.{1,12})\.(?P<domain>.{1,10})\.(?P<tld>.{2,3}))\/(?P<path>.*(?P<fileName>\/.*\..*)$)', line.strip())	#Searches line using specified regex
 		parseUrlDict = parseUrl.groupdict()	#Gets groups from regex result as a dictionary
+		file_name = parseUrlDict['fileName'].strip("/")
 		if parseUrlDict['subdomain'] == 'libraries':	#If the subdomain of the URL is a library:
-			file_name = parseUrlDict['fileName'].strip("/")
 			print(f"\nDownloading {file_name}...")	#Debug
 			currentPath = f"{jarPath}"	#Reset string
 			for i in parseUrlDict['path'].split("/")[:-1]:	#Iterate through all parts of the path (except for the last which is the file)
@@ -119,7 +120,12 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 					print("Exception message : %s" %exc_value)
 					print("Stack trace : %s" %stack_trace)
 		else:
-			print(f"\nSkipping {parseUrlDict['fileName']}...")	#Debug
+			#We need client.jar. This is Minecraft.
+			if file_name == "client.jar":
+				ur.urlretrieve(line, client_path)
+			else:
+				pass
+			print(f"\nSkipping {file_name}...")	#Debug
 			continue	#Continue to next iteration if the URL does not have the 'libraries' subdomain
 #End
 resourcePath = str(os.getcwd()) + "/downloads/mc/assets/objects/"
