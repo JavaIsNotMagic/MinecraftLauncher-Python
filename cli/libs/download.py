@@ -141,14 +141,14 @@ def downloadResources(version, dp):
 				#print(line)
 				ur.urlretrieve(line, jsonPath)
 				utils.decode_urls(jsonPath, dp1)
-				print("Done.")
+				#print("Done.")
 	f.close()
 	with open(dp1) as f:
 		for line in f.readlines():
 			if ".json" in line:
 				#print(line)
 				ur.urlretrieve(line, assets_list)
-				print("done.")
+				#print("done.")
 	f.close()
 	hash_two = []
 	hash_full = []
