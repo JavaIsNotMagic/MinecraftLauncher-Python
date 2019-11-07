@@ -10,7 +10,7 @@ download_path = str(os.getcwd()) + "/downloads/vm.json"
 def pr():
 	release = utils.selectionHelper(download_path)[0]
 	for counter in range(len(release)):
-			print("Release " + str(counter) + '\t' + '\t' + release[counter] + '\t' + '\t')
+			print(" Release " + str(counter) + '\t\t' + release[counter] + '\t\t', end='\t')
 			if counter == range(len(release)):
 				break
 			else:
