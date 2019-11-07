@@ -10,10 +10,10 @@ def Launch(uname, version, game_directory, assets_root, atoken, client, classpat
         f.write(args)
         f.flush()
         f.close()
-        print(str(f.read()))
+        #print(str(f.read())) #debug
         sys.exit(12)
     try:
-        subprocess.run(["/bin/bash", launcher], shell=False, check=True)
+        subprocess.run(["/bin/bash", launcher], shell=True, check=True)
     except subprocess.CalledProcessError:
         print("Could not launch Minecraft")
         sys.exit(12)
