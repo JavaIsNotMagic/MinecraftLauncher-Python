@@ -4,7 +4,7 @@ def Launch(uname, version, game_directory, assets_root, atoken, client, classpat
     file1 = os.getcwd() + "/libs/launch-args.txt"
     #There is a trailing colon in the cp. Don't add one
     cp = classpath + client
-    args = str("-classpath " + cp + "net.minecraft.client.main.Main --username " + uname + " --version " + version + " --gameDir " + {game_directory} +" --assetsDir " + assets_root +" --assetIndex " + version + " --uuid " + atoken + " --accessToken " + atoken + " --userProperties {}" +" --userType legacy")
+    args = f"-classpath  {cp}  net.minecraft.client.main.Main --username  {uname} --version {version} --gameDir  {game_directory} --assetsDir  {assets_root}  --assetIndex  {version} +  --uuid  {atoken} --accessToken  {atoken} --userProperties {empty} --userType legacy"
     with open(file1, "w+") as f:
         f.write(args)
         f.flush()
