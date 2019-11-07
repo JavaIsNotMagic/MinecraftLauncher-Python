@@ -31,7 +31,7 @@ def psn():
 	snapshot = utils.selectionHelper(download_path)[1]
 
 	for counter in range(len(snapshot)):
-		print("Snapshot " + str(counter) + '\t' + '\t' + snapshot[counter] + '\t' + '\t')
+		print("Snapshot " + str(counter) + '\t' + '\t' + snapshot[counter] + '\t' + '\t', end='\t')
 		if counter == range(len(snapshot)):
 				break
 		else:
@@ -50,7 +50,7 @@ def psn():
 def pb():
 	beta = utils.selectionHelper(download_path)[2]
 	for counter in range(len(beta)):
-		print("Release " + str(counter) + '\t' + '\t' + beta[counter] + '\t' + '\t')
+		print("Release " + str(counter) + '\t' + '\t' + beta[counter] + '\t' + '\t', end='\t')
 		if counter == range(len(beta)):
 			break
 		else:
@@ -69,7 +69,7 @@ def pb():
 def pa():
 	alpha = utils.selectionHelper(download_path)[3]
 	for counter in range(len(alpha)):
-		print("Release " + str(counter) + '\t' + '\t' + alpha[counter] + '\t' + '\t')
+		print("Release " + str(counter) + '\t' + '\t' + alpha[counter] + '\t' + '\t', end='\t')
 		if counter == range(len(alpha)):
 			break
 		else:
