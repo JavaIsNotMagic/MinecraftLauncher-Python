@@ -1,10 +1,9 @@
 """
 os: Operating System module, helper for file I/O operations (File exists check, etc)
 """
-from os import walk
-import os
-downloads = str(os.getcwd()) + "/downloads/"
-data = str(os.getcwd()) + "/downloads/mc/data"
+from os import walk,getcwd
+downloads = str(getcwd()) + "/downloads/"
+data = str(getcwd()) + "/downloads/mc/data"
 def clean():
 	#Final stage
 	f = []
@@ -18,10 +17,10 @@ def clean():
 		break
 	#end
 	for i in g:
-		print("Removing: " + data + "/" + i)
+		#print("Removing: " + data + "/" + i) #debug
 		os.remove(data + "/" + i)
 	#End
 	for a in f:
-		print("Removing: " + downloads + "/" + a)
+		#print("Removing: " + downloads + "/" + a) #debug
 		os.remove(downloads + "/" + a)
 #end

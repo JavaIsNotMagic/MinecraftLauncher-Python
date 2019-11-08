@@ -1,10 +1,180 @@
-[10:08:28] [main/INFO]: Setting user: test
-[10:08:28] [main/INFO]: (Session ID is token:a2408b88fe5743a3acd9ff02259617e5:a2408b88fe5743a3acd9ff02259617e5)
-[10:08:29] [Client thread/INFO]: LWJGL Version: 2.9.1
-[10:08:29] [Client thread/ERROR]: Couldn't initialize twitch stream
-[10:08:29] [Client thread/INFO]: Reloading ResourceManager: Default
-[10:08:30] [Sound Library Loader/INFO]: Sound engine started
-[10:08:30] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[10:08:30] [Client thread/INFO]: Created: 256x256 textures/items-atlas
-[10:08:32] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:gui.button.press
-[10:08:32] [Client thread/INFO]: Stopping!
+[10:14:55] [Client thread/INFO]: Setting user: WelcomeToBASH
+[10:15:00] [Client thread/WARN]: Skipping bad option: lastServer:
+[10:15:00] [Client thread/WARN]: Skipping bad option: streamPreferredServer:
+[10:15:00] [Client thread/WARN]: Skipping bad option: textBackgroundOpacity:
+[10:15:00] [Client thread/INFO]: LWJGL Version: 3.2.1 build 12
+[10:15:00] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
+Possible reasons:
+	a) -Djava.library.path is set to a folder containing shared libraries of an older LWJGL version.
+	b) The classpath contains jar files of an older LWJGL version.
+Possible solutions:
+	a) Make sure to not set -Djava.library.path (it is not needed for developing with LWJGL 3) or make
+	   sure the folder it points to contains the shared libraries of the correct LWJGL version.
+	b) Check the classpath and make sure to only have jar files of the same LWJGL version in it.
+[10:15:00] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
+Possible reasons:
+	a) -Djava.library.path is set to a folder containing shared libraries of an older LWJGL version.
+	b) The classpath contains jar files of an older LWJGL version.
+Possible solutions:
+	a) Make sure to not set -Djava.library.path (it is not needed for developing with LWJGL 3) or make
+	   sure the folder it points to contains the shared libraries of the correct LWJGL version.
+	b) Check the classpath and make sure to only have jar files of the same LWJGL version in it.
+[10:15:00] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
+Possible reasons:
+	a) -Djava.library.path is set to a folder containing shared libraries of an older LWJGL version.
+	b) The classpath contains jar files of an older LWJGL version.
+Possible solutions:
+	a) Make sure to not set -Djava.library.path (it is not needed for developing with LWJGL 3) or make
+	   sure the folder it points to contains the shared libraries of the correct LWJGL version.
+	b) Check the classpath and make sure to only have jar files of the same LWJGL version in it.
+[10:15:00] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
+Possible reasons:
+	a) -Djava.library.path is set to a folder containing shared libraries of an older LWJGL version.
+	b) The classpath contains jar files of an older LWJGL version.
+Possible solutions:
+	a) Make sure to not set -Djava.library.path (it is not needed for developing with LWJGL 3) or make
+	   sure the folder it points to contains the shared libraries of the correct LWJGL version.
+	b) Check the classpath and make sure to only have jar files of the same LWJGL version in it.
+[10:15:01] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
+Possible reasons:
+	a) -Djava.library.path is set to a folder containing shared libraries of an older LWJGL version.
+	b) The classpath contains jar files of an older LWJGL version.
+Possible solutions:
+	a) Make sure to not set -Djava.library.path (it is not needed for developing with LWJGL 3) or make
+	   sure the folder it points to contains the shared libraries of the correct LWJGL version.
+	b) Check the classpath and make sure to only have jar files of the same LWJGL version in it.
+[10:15:02] [Client thread/WARN]: ERROR : Couldn't load Narrator library : Unable to load library 'fliteWrapper': Can't obtain InputStream for linux-x86-64/libfliteWrapper.so
+[10:15:03] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[10:15:20] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
+Possible reasons:
+	a) -Djava.library.path is set to a folder containing shared libraries of an older LWJGL version.
+	b) The classpath contains jar files of an older LWJGL version.
+Possible solutions:
+	a) Make sure to not set -Djava.library.path (it is not needed for developing with LWJGL 3) or make
+	   sure the folder it points to contains the shared libraries of the correct LWJGL version.
+	b) Check the classpath and make sure to only have jar files of the same LWJGL version in it.
+[10:15:20] [Client thread/INFO]: OpenAL initialized.
+[10:15:20] [Client thread/INFO]: Sound engine started
+[10:15:20] [Client thread/INFO]: Created: 1024x512 textures-atlas
+[10:15:21] [Client thread/INFO]: Created: 256x256 textures/particle-atlas
+[10:15:21] [Client thread/INFO]: Created: 256x256 textures/painting-atlas
+[10:15:21] [Client thread/INFO]: Created: 256x128 textures/mob_effect-atlas
+[10:15:43] [Client thread/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[10:15:43] [Client thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[10:15:43] [Client thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[10:15:43] [Client thread/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[10:15:43] [Client thread/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[10:15:43] [Server thread/INFO]: Starting integrated minecraft server version 1.14.4
+[10:15:43] [Server thread/INFO]: Generating keypair
+[10:15:43] [Server thread/INFO]: Found new data pack vanilla, loading it automatically
+[10:15:43] [Server thread/INFO]: Reloading ResourceManager: Default
+[10:15:45] [Server thread/INFO]: Loaded 6 recipes
+[10:15:46] [Server thread/INFO]: Loaded 811 advancements
+[10:15:46] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:02] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:04] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:04] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:04] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:04] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:06] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:06] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:06] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:06] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:07] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:07] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:08] [Client thread/INFO]: Preparing spawn area: 0%
+[10:16:08] [Client thread/INFO]: Preparing spawn area: 7%
+[10:16:10] [Client thread/INFO]: Preparing spawn area: 7%
+[10:16:10] [Client thread/INFO]: Preparing spawn area: 7%
+[10:16:10] [Client thread/INFO]: Preparing spawn area: 7%
+[10:16:10] [Client thread/INFO]: Preparing spawn area: 7%
+[10:16:11] [Client thread/INFO]: Preparing spawn area: 7%
+[10:16:11] [Client thread/INFO]: Preparing spawn area: 17%
+[10:16:12] [Client thread/INFO]: Preparing spawn area: 17%
+[10:16:12] [Client thread/INFO]: Preparing spawn area: 17%
+[10:16:13] [Client thread/INFO]: Preparing spawn area: 17%
+[10:16:13] [Client thread/INFO]: Preparing spawn area: 17%
+[10:16:14] [Client thread/INFO]: Preparing spawn area: 34%
+[10:16:14] [Client thread/INFO]: Preparing spawn area: 38%
+[10:16:18] [Client thread/INFO]: Preparing spawn area: 38%
+[10:16:18] [Client thread/INFO]: Preparing spawn area: 38%
+[10:16:18] [Client thread/INFO]: Preparing spawn area: 38%
+[10:16:18] [Client thread/INFO]: Preparing spawn area: 38%
+[10:16:18] [Client thread/INFO]: Preparing spawn area: 38%
+[10:16:18] [Client thread/INFO]: Preparing spawn area: 38%
+[10:16:18] [Client thread/INFO]: Preparing spawn area: 38%
+[10:16:19] [Client thread/INFO]: Preparing spawn area: 71%
+[10:16:19] [Client thread/INFO]: Preparing spawn area: 71%
+[10:16:19] [Client thread/INFO]: Preparing spawn area: 77%
+[10:16:20] [Client thread/INFO]: Preparing spawn area: 80%
+[10:16:22] [Client thread/INFO]: Preparing spawn area: 81%
+[10:16:22] [Client thread/INFO]: Preparing spawn area: 81%
+[10:16:22] [Client thread/INFO]: Preparing spawn area: 81%
+[10:16:22] [Client thread/INFO]: Preparing spawn area: 81%
+[10:16:22] [Client thread/INFO]: Preparing spawn area: 81%
+[10:16:23] [Client thread/INFO]: Preparing spawn area: 98%
+[10:16:23] [Client thread/INFO]: Time elapsed: 36646 ms
+[10:16:25] [Server thread/INFO]: WelcomeToBASH[local:E:0c3163b7] logged in with entity id 127 at (2.628958624242784, 70.29174081005232, 17.31997115782992)
+[10:16:25] [Server thread/INFO]: WelcomeToBASH joined the game
+[10:16:25] [Server thread/INFO]: Saving and pausing game...
+[10:16:25] [Server thread/INFO]: Saving chunks for level 'Mine'/minecraft:the_nether
+[10:16:25] [Server thread/INFO]: Saving chunks for level 'Mine'/minecraft:the_end
+[10:16:25] [Server thread/INFO]: Saving chunks for level 'Mine'/minecraft:overworld
+[10:16:26] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 3175ms or 63 ticks behind
+[10:16:27] [Client thread/INFO]: Loaded 0 advancements
+[10:16:28] [Server thread/INFO]: Saving and pausing game...
+[10:16:28] [Server thread/INFO]: Saving chunks for level 'Mine'/minecraft:the_nether
+[10:16:28] [Server thread/INFO]: Saving chunks for level 'Mine'/minecraft:the_end
+[10:16:28] [Server thread/INFO]: Saving chunks for level 'Mine'/minecraft:overworld
+[10:16:50] [Server thread/INFO]: Saving and pausing game...
+[10:16:50] [Server thread/INFO]: Saving chunks for level 'Mine'/minecraft:the_nether
+[10:16:50] [Server thread/INFO]: Saving chunks for level 'Mine'/minecraft:the_end
+[10:16:50] [Server thread/INFO]: Saving chunks for level 'Mine'/minecraft:overworld
+[10:16:58] [Server thread/INFO]: WelcomeToBASH lost connection: Disconnected
+[10:16:58] [Server thread/INFO]: WelcomeToBASH left the game
+[10:16:58] [Server thread/INFO]: Stopping singleplayer server as player logged out
+[10:16:58] [Server thread/INFO]: Stopping server
+[10:16:58] [Server thread/INFO]: Saving players
+[10:16:58] [Server thread/INFO]: Saving worlds
+[10:16:58] [Server thread/INFO]: Saving chunks for level 'Mine'/minecraft:the_nether
+[10:16:58] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[10:16:58] [Server thread/INFO]: Saving chunks for level 'Mine'/minecraft:the_end
+[10:16:58] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[10:16:58] [Server thread/INFO]: Saving chunks for level 'Mine'/minecraft:overworld
+[10:16:58] [Server thread/INFO]: ThreadedAnvilChunkStorage (Mine): All chunks are saved
+[10:16:58] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[10:16:58] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[10:16:58] [Server thread/INFO]: ThreadedAnvilChunkStorage (Mine): All chunks are saved
+[10:17:00] [Client thread/INFO]: Stopping!
