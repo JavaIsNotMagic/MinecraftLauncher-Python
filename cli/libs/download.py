@@ -7,7 +7,6 @@ urllib.request: Used to download files from the internet
 urllib.error: Error classes for urllib.request. Needed for urllib.*
 urlparse: General URL classes.
 json: JSON handler module: needed to decode Minecraft's .json files
-pprint: Pretty printer. Used for debugging
 utils: various helper functions
 """
 
