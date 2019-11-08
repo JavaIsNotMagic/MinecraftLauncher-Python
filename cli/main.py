@@ -103,7 +103,7 @@ if ans == 1:
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
 	client = str(os.getcwd()) + "/downloads/mc/versions/client" + version + ".jar"
-	cp = path + "/downloads/mc/data/classpath.txt"
+	cp = path + "/downloads/mc/data/classpath" + version + ".txt"
 	classpath = read_file(cp)
 	Launch(uname, version, gameDir, assetsDir, atoken, client, classpath)
 	clean.clean()
@@ -122,7 +122,7 @@ if ans == 2:
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
 	client = path + "/downloads/mc/client.jar"
-	cp = path + "/downloads/mc/data/classpath.txt"
+	cp = path + "/downloads/mc/data/classpath" + version + ".txt"
 	classpath = read_file(cp)
 	Launch(uname, version, gameDir, assetsDir, atoken, client, classpath)
 	clean.clean()
@@ -141,7 +141,7 @@ if ans == 3:
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
 	client = path + "/downloads/mc/client.jar"
-	cp = path + "/downloads/mc/data/classpath.txt"
+	cp = path + "/downloads/mc/data/classpath" + version + ".txt"
 	classpath = read_file(cp)
 	Launch(uname, version, gameDir, assetsDir, atoken, client, classpath)
 	clean.clean()
@@ -158,7 +158,7 @@ if ans == 4:
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
 	client = path + "/downloads/mc/client.jar"
-	cp = path + "/downloads/mc/data/classpath.txt"
+	cp = path + "/downloads/mc/data/classpath" + version + ".txt"
 	classpath = read_file(cp)
 	Launch(uname, version, gameDir, assetsDir, atoken, client, classpath)
 	clean.clean()

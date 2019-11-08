@@ -51,7 +51,7 @@ def getVersionUrl(file1, version, dp):
 		try:
 			ur.urlretrieve(line, dp)
 			with open(dp, "r") as f:
-				string = f.read()
+				string = f.readlines()
 				for line in string:
 					if version in line:
 						pass
