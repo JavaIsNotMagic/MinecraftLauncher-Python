@@ -1,9 +1,10 @@
-[09:21:28] [main/INFO]: Setting user: cateater
-[09:21:28] [main/INFO]: (Session ID is token:0f2f17371ae6488eb91147e36433d9a5:0f2f17371ae6488eb91147e36433d9a5)
-[09:21:29] [Client thread/INFO]: LWJGL Version: 2.9.1
-[09:21:29] [Client thread/ERROR]: Couldn't initialize twitch stream
-[09:21:29] [Client thread/INFO]: Reloading ResourceManager: Default
-[09:21:30] [Sound Library Loader/INFO]: Sound engine started
-[09:21:30] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
-[09:21:31] [Client thread/INFO]: Created: 256x256 textures/items-atlas
-[09:21:39] [Client thread/INFO]: Stopping!
+[09:27:59] [main/INFO]: Setting user: cateater
+[09:27:59] [main/INFO]: (Session ID is token:8d05ac11598a4467887e80db74f79985:8d05ac11598a4467887e80db74f79985)
+[09:28:00] [Client thread/INFO]: LWJGL Version: 2.9.1
+[09:28:00] [Client thread/ERROR]: Couldn't initialize twitch stream
+[09:28:00] [Client thread/INFO]: Reloading ResourceManager: Default
+[09:28:01] [Sound Library Loader/INFO]: Sound engine started
+[09:28:01] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[09:28:01] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[09:28:03] [Client thread/WARN]: Unable to play unknown soundEvent: minecraft:gui.button.press
+[09:28:03] [Client thread/INFO]: Stopping!

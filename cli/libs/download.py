@@ -50,6 +50,14 @@ def getVersionUrl(file1, version, dp):
 	if flag:
 		try:
 			ur.urlretrieve(line, dp)
+			with open(dp, "r") as f:
+				string = f.read()
+				for line in string:
+					if version in line:
+						pass
+					else:
+						print("Version: " + version + " not downloaded")
+						sys.exit(21)
 			#print("Done!")
 		except ue.URLError:
 			print("Version " + version + " not found.")
@@ -67,8 +75,9 @@ try:
 except:
 	pass	#Ignore if folder exists
 #end
-def downloadLibs(file2):	#Download libraries used by Minecraft
-	cp = str(os.getcwd()) + "/downloads/mc/data/classpath.txt"
+def downloadLibs(file2,version):	#Download libraries used by Minecraft
+	cp = str(os.getcwd()) + "/downloads/mc/data/classpath" + version + ".txt"
+	client_path = str(os.getcwd()) + "/downloads/mc/versions/client" + version + ".jar"
 	try:
 		with open(cp, "w+") as cd:
 			if sys.platform.startswith('nt'):
@@ -85,7 +94,6 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 	#end
 	file = open(file2, "r")	#Open the file specified in read only mode
 	fileOutput = file.readlines()	#Get the content of the file line by line
-	client_path = str(os.getcwd()) + "/downloads/mc/client" + version + ".jar"
 	for line in fileOutput:	#For every line
 		parseUrl = re.search(r'(?P<schema>http[s]?):\/\/(?P<siteName>(?P<subdomain>.{1,12})\.(?P<domain>.{1,10})\.(?P<tld>.{2,3}))\/(?P<path>.*(?P<fileName>\/.*\..*)$)', line.strip())	#Searches line using specified regex
 		parseUrlDict = parseUrl.groupdict()	#Gets groups from regex result as a dictionary
@@ -107,15 +115,10 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 					else:
 						sep = ":"
 					#End
-					rpath = "/home/ctozer/Desktop/Development/Python/json-decoder/cli/downloads/mc/jars/tv/twitch/twitch-platform/5.16/twitch-platform-5.16-natives-windows-64.jar:/home/ctozer/Desktop/Development/Python/json-decoder/cli/downloads/mc/jars/tv/twitch/twitch-external-platform/4.5/twitch-external-platform-4.5-natives-windows-32.jar:/home/ctozer/Desktop/Development/Python/json-decoder/cli/downloads/mc/jars/tv/twitch/twitch-external-platform/4.5/twitch-external-platform-4.5-natives-windows-64.jar"
-					if savePath == rpath:
-						r.flush()
-						r.close()
-					else:
-						r.write(savePath + sep)
-						r.flush()
-						r.close()
-					#print("Wrote path: " + savePath + " to classpath") # DEBUG
+					r.write(savePath + sep)
+					r.flush()
+					r.close()
+					print("Wrote path: " + savePath + " to classpath") # DEBUG
 					#print(f"Saved to {savePath}")	#Debug
 			except:
 				print(f"Error downloading {parseUrlDict['fileName']}.")

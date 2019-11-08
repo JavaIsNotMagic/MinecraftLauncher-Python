@@ -51,15 +51,23 @@ print("Decoding Minecraft assets at path " + path)
 print("Stage one: Download Version Manifest")
 try:
 	if os.path.isfile(download_path):
+		os.remove(download_path)
+		urllib.request.urlretrieve(url, download_path)
 		#print("Done")
-		pass
+		print("Stage two: Seperate URLs from Version Manifest")
+		if os.path.isfile(write_path):
+			os.remove(write_path)
+			utils.decode_urls(download_path, write_path)
+		else:
+			utils.decode_urls(download_path, write_path)
+		#end
 	else:
 		urllib.request.urlretrieve(url, download_path)
 		#print("Done")
 		print("Stage two: Seperate URLs from Version Manifest")
 		if os.path.isfile(write_path):
-			#print("Done")
-			pass
+			os.remove(write_path)
+			utils.decode_urls(download_path, write_path)
 		else:
 			utils.decode_urls(download_path, write_path)
 		#end
@@ -88,13 +96,13 @@ if ans == 1:
 	print("Downloading Version: " + version)
 	download.getVersionUrl(write_path, version, version_decoded)
 	utils.decode_urls(version_decoded, download_urls)
-	download.downloadLibs(download_urls)
+	download.downloadLibs(download_urls, version)
 	download.downloadResources(version, download_path)
 	print("Launching Minecraft " + version)
 	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
-	client = path + "/downloads/mc/client" + version + ".jar"
+	client = str(os.getcwd()) + "/downloads/mc/versions/client" + version + ".jar"
 	cp = path + "/downloads/mc/data/classpath.txt"
 	classpath = read_file(cp)
 	Launch(uname, version, gameDir, assetsDir, atoken, client, classpath)
