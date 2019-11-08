@@ -1,1 +1,0 @@
-All the files in this directory are used to test different ideas for the launcher. They should not be included in any production code
