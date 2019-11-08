@@ -165,6 +165,9 @@ def downloadResources(version, dp):
 			if ".json" in line:
 				#print(line)
 				ur.urlretrieve(line, assets_list)
+				#Make a copy for the Index list
+				index_list = str(os.getcwd()) + "/downloads/mc/assets/indexes/" + version + ".json"
+				ur.urlretrieve(line, index_list)
 				#print("done.")
 	f.close()
 	hash_two = []
