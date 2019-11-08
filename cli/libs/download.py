@@ -85,7 +85,7 @@ def downloadLibs(file2):	#Download libraries used by Minecraft
 	#end
 	file = open(file2, "r")	#Open the file specified in read only mode
 	fileOutput = file.readlines()	#Get the content of the file line by line
-	client_path = str(os.getcwd()) + "/downloads/mc/client.jar"
+	client_path = str(os.getcwd()) + "/downloads/mc/client" + version + ".jar"
 	for line in fileOutput:	#For every line
 		parseUrl = re.search(r'(?P<schema>http[s]?):\/\/(?P<siteName>(?P<subdomain>.{1,12})\.(?P<domain>.{1,10})\.(?P<tld>.{2,3}))\/(?P<path>.*(?P<fileName>\/.*\..*)$)', line.strip())	#Searches line using specified regex
 		parseUrlDict = parseUrl.groupdict()	#Gets groups from regex result as a dictionary

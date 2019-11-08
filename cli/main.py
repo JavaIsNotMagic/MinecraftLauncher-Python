@@ -94,7 +94,7 @@ if ans == 1:
 	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
-	client = path + "/downloads/mc/client.jar"
+	client = path + "/downloads/mc/client" + version + ".jar"
 	cp = path + "/downloads/mc/data/classpath.txt"
 	classpath = read_file(cp)
 	Launch(uname, version, gameDir, assetsDir, atoken, client, classpath)
