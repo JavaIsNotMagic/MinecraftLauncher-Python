@@ -15,6 +15,7 @@ import urllib.request as ur
 import urllib.error as ue
 from urllib.parse import urlparse as up
 import json
+from zipfile import ZipFile
 #from pprint import pprint as pp
 
 #Custom Libs
@@ -120,6 +121,13 @@ def downloadLibs(file2,version):	#Download libraries used by Minecraft
 					r.close()
 					print("Wrote path: " + savePath + " to classpath") # DEBUG
 					#print(f"Saved to {savePath}")	#Debug
+				with open(str(os.getcwd()) + "/downloads/mc/data/paths.txt", "a+") as w:
+					w.write(savePath)
+					w.write('\n')
+					w.flush()
+					w.close()
+					print("Wrote path: " + savePath + " to pathlist")
+				#end
 			except:
 				print(f"Error downloading {parseUrlDict['fileName']}.")
 				exc_type, exc_value, exc_traceback = sys.exc_info()
@@ -210,3 +218,42 @@ def downloadResources(version, dp):
 		#end
 	#end
 #end
+def extractNatives(version):
+	windowsNatives = str(os.getcwd()) + "/downloads/mc/natives/windows"
+	linuxNatives = str(os.getcwd()) + "/downloads/mc/natives/linux"
+	macNatives = str(os.getcwd()) + "/downloads/mc/natives/osx"
+	with open(str(os.getcwd()) + "/downloads/mc/data/paths.txt", "r") as f:
+		for line in f.readlines():
+			# print(line) ## DEBUG:
+			if "natives-windows" in line:
+				print("Windows Native: " + line)
+				file = line.strip("\n").strip("'")
+				with ZipFile(file, 'r') as zip:
+					zip.extractall(windowsNatives)
+				#end
+				print("Excracted Windows Native!")
+			elif "natives-linux" in line:
+				print("Linux Native: " + line)
+				file = line.strip("\n").strip("'")
+				with ZipFile(file, 'r') as zip:
+					zip.extractall(linuxNatives)
+				#End
+				print("Excracted Linux Native!")
+			elif "natives-macos" in line:
+				print("Mac Native: " + line)
+				file = line.strip("\n").strip("'")
+				with ZipFile(file, 'r') as zip:
+					zip.extractall(macNatives)
+				#End
+				print("Excracted Mac Native!")
+			elif "natives-osx" in line:
+				print("Mac Native: " + line)
+				file = line.strip("\n").strip("'")
+				with ZipFile(file, 'r') as zip:
+					zip.extractall(macNatives)
+				#End
+				print("Excracted Mac Native!")
+			else:
+				print("Jar found: " + line)
+				pass
+			#end

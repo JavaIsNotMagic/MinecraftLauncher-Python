@@ -97,7 +97,10 @@ if ans == 1:
 	download.getVersionUrl(write_path, version, version_decoded)
 	utils.decode_urls(version_decoded, download_urls)
 	download.downloadLibs(download_urls, version)
-	download.downloadResources(version, download_path)
+	rpath = download.downloadResources(version, download_path)
+	print("Unpacking Natives")
+	download.extractNatives(rpath)
+	print("Done!")
 	print("Launching Minecraft " + version)
 	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
@@ -117,7 +120,10 @@ if ans == 2:
 	download.getVersionUrl(write_path, version, version_decoded)
 	utils.decode_urls(version_decoded, download_urls)
 	download.downloadLibs(download_urls)
-	download.downloadResources(version, download_path)
+	rpath = download.downloadResources(version, download_path)
+	print("Unpacking Natives")
+	download.extractNatives(rpath)
+	print("Done!")
 	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
@@ -136,7 +142,10 @@ if ans == 3:
 	download.getVersionUrl(write_path, version, version_decoded)
 	utils.decode_urls(version_decoded, download_urls)
 	download.downloadLibs(download_urls)
-	download.downloadResources(version, download_path)
+	rpath = download.downloadResources(version, download_path)
+	print("Unpacking Natives")
+	download.extractNatives(rpath)
+	print("Done!")
 	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
@@ -153,7 +162,10 @@ if ans == 4:
 	download.getVersionUrl(write_path, version, version_decoded)
 	utils.decode_urls(version_decoded, download_urls)
 	download.downloadLibs(download_urls)
-	download.downloadResources(version, download_path)
+	rpath = download.downloadResources(version, download_path)
+	print("Unpacking Natives")
+	download.unpackNatives(rpath)
+	print("Done!")
 	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
