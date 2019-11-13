@@ -127,7 +127,7 @@ if ans == 2:
 	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
-	client = path + "/downloads/mc/client.jar"
+	client = str(os.getcwd()) + "/downloads/mc/versions/client" + version + ".jar"
 	cp = path + "/downloads/mc/data/classpath" + version + ".txt"
 	classpath = read_file(cp)
 	Launch(uname, version, gameDir, assetsDir, atoken, client, classpath)
@@ -149,7 +149,7 @@ if ans == 3:
 	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
-	client = path + "/downloads/mc/client.jar"
+	client = str(os.getcwd()) + "/downloads/mc/versions/client" + version + ".jar"
 	cp = path + "/downloads/mc/data/classpath" + version + ".txt"
 	classpath = read_file(cp)
 	Launch(uname, version, gameDir, assetsDir, atoken, client, classpath)
@@ -169,7 +169,7 @@ if ans == 4:
 	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
-	client = path + "/downloads/mc/client.jar"
+	client = str(os.getcwd()) + "/downloads/mc/versions/client" + version + ".jar"
 	cp = path + "/downloads/mc/data/classpath" + version + ".txt"
 	classpath = read_file(cp)
 	Launch(uname, version, gameDir, assetsDir, atoken, client, classpath)
