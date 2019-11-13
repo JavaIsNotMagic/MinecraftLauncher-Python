@@ -7,6 +7,7 @@ urllib.request: Used to download files from the internet
 urllib.error: Error classes for urllib.request. Needed for urllib.*
 urlparse: General URL classes.
 json: JSON handler module: needed to decode Minecraft's .json files
+zipfile: Handles Minecraft .jar files, allows the natives to be auto extracted.
 utils: various helper functions
 """
 
@@ -16,7 +17,6 @@ import urllib.error as ue
 from urllib.parse import urlparse as up
 import json
 from zipfile import ZipFile
-#from pprint import pprint as pp
 
 #Custom Libs
 libs_path = str(os.getcwd())+ "/libs"
