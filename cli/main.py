@@ -98,10 +98,10 @@ if ans == 1:
 	utils.decode_urls(version_decoded, download_urls)
 	download.downloadLibs(download_urls, version)
 	rpath = download.downloadResources(version, download_path)
-	print("Unpacking Natives")
+	print("Stage Five: Unpacking Natives")
 	download.extractNatives(rpath)
 	print("Done!")
-	print("Launching Minecraft " + version)
+	print("Stage Six: Launching Minecraft " + version)
 	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
@@ -116,14 +116,16 @@ if ans == 1:
 #Snapshot
 if ans == 2:
 	version = selection.psn()
+	print("Stage Four: Download Minecraft Assets")
 	print("Downloading Version: " + version)
 	download.getVersionUrl(write_path, version, version_decoded)
 	utils.decode_urls(version_decoded, download_urls)
-	download.downloadLibs(download_urls)
+	download.downloadLibs(download_urls, version)
 	rpath = download.downloadResources(version, download_path)
-	print("Unpacking Natives")
+	print("Stage Five: Unpacking Natives")
 	download.extractNatives(rpath)
 	print("Done!")
+	print("Stage Six: Launching Minecraft " + version)
 	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
@@ -138,14 +140,16 @@ if ans == 2:
 #Beta
 if ans == 3:
 	version = selection.pb()
+	print("Stage Four: Download Minecraft Assets")
 	print("Downloading Version: " + version)
 	download.getVersionUrl(write_path, version, version_decoded)
 	utils.decode_urls(version_decoded, download_urls)
-	download.downloadLibs(download_urls)
+	download.downloadLibs(download_urls, version)
 	rpath = download.downloadResources(version, download_path)
-	print("Unpacking Natives")
+	print("Stage Five: Unpacking Natives")
 	download.extractNatives(rpath)
 	print("Done!")
+	print("Stage Six: Launching Minecraft " + version)
 	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
@@ -158,14 +162,16 @@ if ans == 3:
 #Alpha
 if ans == 4:
 	version = selection.pa()
+	print("Stage Four: Download Minecraft Assets")
 	print("Downloading Version: " + version)
 	download.getVersionUrl(write_path, version, version_decoded)
 	utils.decode_urls(version_decoded, download_urls)
-	download.downloadLibs(download_urls)
+	download.downloadLibs(download_urls, version)
 	rpath = download.downloadResources(version, download_path)
-	print("Unpacking Natives")
-	download.unpackNatives(rpath)
+	print("Stage Five: Unpacking Natives")
+	download.extractNatives(rpath)
 	print("Done!")
+	print("Stage Six: Launching Minecraft " + version)
 	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex

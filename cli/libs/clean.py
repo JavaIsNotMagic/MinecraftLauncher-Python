@@ -17,10 +17,10 @@ def clean():
 		break
 	#end
 	for i in g:
-		#print("Removing: " + data + "/" + i) #debug
+		print("Stage Seven: Removing " + data + "/" + i) #debug
 		remove(data + "/" + i)
 	#End
 	for a in f:
-		#print("Removing: " + downloads + "/" + a) #debug
+		print("Stage Eight: Removing " + downloads + "/" + a) #debug
 		remove(downloads + "/" + a)
 #end
