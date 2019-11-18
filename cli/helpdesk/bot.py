@@ -1,6 +1,6 @@
 import discord,json,requests,os,sys
 
-TOKEN = 'NjQ1NzQzNTI1MzQ2MDE3MzEw.XdH6Iw.kQBuo0njWbDqRCqAkpd4-5OIkgg'
+TOKEN = 'NjQ1NzQzNTI1MzQ2MDE3MzEw.XdKYTA.bLtRq8XxGf0ar8Ut5wAOIK525Tk'
 
 def getGithubIssues():
     url = "https://api.github.com/repos/JavaIsNotMagic/MinecraftLauncher-Python/issues"
