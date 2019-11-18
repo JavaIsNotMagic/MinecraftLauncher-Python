@@ -24,3 +24,6 @@ cli/downloads/mc/assets/*
 
 #Ignore Minecraft Data
 cli/downloads/mc/data/*
+
+#Ignore the helpdesk bot
+/**/helpdesk/*
