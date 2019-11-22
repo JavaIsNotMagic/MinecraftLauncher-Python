@@ -37,6 +37,7 @@ download_path = str(os.getcwd()) + "/downloads/vm.json"
 version_decoded = str(os.getcwd() + "/downloads/version_decoded.txt")
 download_urls = str(os.getcwd() + "/downloads/mc/data/download_urls.txt")
 url = "https://launchermeta.mojang.com/mc/game/version_manifest.json"
+gameDir = str(os.getcwd()) + "/minecraft/game"
 path = str(os.getcwd())
 try:
 	os.mkdir(str(os.getcwd()) + "/downloads")
@@ -102,7 +103,6 @@ if ans == 1:
 	download.extractNatives(rpath)
 	print("Done!")
 	print("Stage Six: Launching Minecraft " + version)
-	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
 	client = str(os.getcwd()) + "/downloads/mc/versions/client" + version + ".jar"
@@ -126,7 +126,6 @@ if ans == 2:
 	download.extractNatives(rpath)
 	print("Done!")
 	print("Stage Six: Launching Minecraft " + version)
-	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
 	client = str(os.getcwd()) + "/downloads/mc/versions/client" + version + ".jar"
@@ -150,7 +149,6 @@ if ans == 3:
 	download.extractNatives(rpath)
 	print("Done!")
 	print("Stage Six: Launching Minecraft " + version)
-	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
 	client = str(os.getcwd()) + "/downloads/mc/versions/client" + version + ".jar"
@@ -172,7 +170,6 @@ if ans == 4:
 	download.extractNatives(rpath)
 	print("Done!")
 	print("Stage Six: Launching Minecraft " + version)
-	gameDir = str(os.getcwd()) + "/game"
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = uuid.uuid4().hex
 	client = str(os.getcwd()) + "/downloads/mc/versions/client" + version + ".jar"
