@@ -1,8 +1,6 @@
-[14:20:09] [Render thread/WARN]: Skipping bad option: lastServer:
-[14:20:09] [Render thread/WARN]: Skipping bad option: streamPreferredServer:
-[14:20:09] [Render thread/WARN]: Skipping bad option: textBackgroundOpacity:
-[14:20:10] [Render thread/INFO]: Backend library: LWJGL version 3.2.1 build 12
-[14:20:12] [Render thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
+[08:37:03] [Client thread/WARN]: Skipping bad option: lastServer:
+[08:37:03] [Client thread/INFO]: LWJGL Version: 3.2.1 build 12
+[08:37:03] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
 Possible reasons:
 	a) -Djava.library.path is set to a folder containing shared libraries of an older LWJGL version.
 	b) The classpath contains jar files of an older LWJGL version.
@@ -10,7 +8,7 @@ Possible solutions:
 	a) Make sure to not set -Djava.library.path (it is not needed for developing with LWJGL 3) or make
 	   sure the folder it points to contains the shared libraries of the correct LWJGL version.
 	b) Check the classpath and make sure to only have jar files of the same LWJGL version in it.
-[14:20:13] [Render thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
+[08:37:04] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
 Possible reasons:
 	a) -Djava.library.path is set to a folder containing shared libraries of an older LWJGL version.
 	b) The classpath contains jar files of an older LWJGL version.
@@ -18,7 +16,7 @@ Possible solutions:
 	a) Make sure to not set -Djava.library.path (it is not needed for developing with LWJGL 3) or make
 	   sure the folder it points to contains the shared libraries of the correct LWJGL version.
 	b) Check the classpath and make sure to only have jar files of the same LWJGL version in it.
-[14:20:14] [Render thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
+[08:37:04] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
 Possible reasons:
 	a) -Djava.library.path is set to a folder containing shared libraries of an older LWJGL version.
 	b) The classpath contains jar files of an older LWJGL version.
@@ -26,7 +24,7 @@ Possible solutions:
 	a) Make sure to not set -Djava.library.path (it is not needed for developing with LWJGL 3) or make
 	   sure the folder it points to contains the shared libraries of the correct LWJGL version.
 	b) Check the classpath and make sure to only have jar files of the same LWJGL version in it.
-[14:20:16] [Render thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
+[08:37:04] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
 Possible reasons:
 	a) -Djava.library.path is set to a folder containing shared libraries of an older LWJGL version.
 	b) The classpath contains jar files of an older LWJGL version.
@@ -34,7 +32,7 @@ Possible solutions:
 	a) Make sure to not set -Djava.library.path (it is not needed for developing with LWJGL 3) or make
 	   sure the folder it points to contains the shared libraries of the correct LWJGL version.
 	b) Check the classpath and make sure to only have jar files of the same LWJGL version in it.
-[14:20:17] [Render thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
+[08:37:05] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
 Possible reasons:
 	a) -Djava.library.path is set to a folder containing shared libraries of an older LWJGL version.
 	b) The classpath contains jar files of an older LWJGL version.
@@ -42,9 +40,9 @@ Possible solutions:
 	a) Make sure to not set -Djava.library.path (it is not needed for developing with LWJGL 3) or make
 	   sure the folder it points to contains the shared libraries of the correct LWJGL version.
 	b) Check the classpath and make sure to only have jar files of the same LWJGL version in it.
-[14:20:20] [Render thread/INFO]: Narrator library successfully loaded
-[14:20:23] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
-[14:20:27] [Render thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
+[08:37:07] [Client thread/INFO]: Narrator library successfully loaded
+[08:37:08] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[08:37:24] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
 Possible reasons:
 	a) -Djava.library.path is set to a folder containing shared libraries of an older LWJGL version.
 	b) The classpath contains jar files of an older LWJGL version.
@@ -52,108 +50,10 @@ Possible solutions:
 	a) Make sure to not set -Djava.library.path (it is not needed for developing with LWJGL 3) or make
 	   sure the folder it points to contains the shared libraries of the correct LWJGL version.
 	b) Check the classpath and make sure to only have jar files of the same LWJGL version in it.
-[14:20:27] [Render thread/INFO]: OpenAL initialized.
-[14:20:27] [Render thread/INFO]: Sound engine started
-[14:20:28] [Render thread/INFO]: Created: 2048x1024 textures-atlas
-[14:20:29] [Render thread/INFO]: Created: 256x256 textures/particle-atlas
-[14:20:29] [Render thread/INFO]: Created: 256x256 textures/painting-atlas
-[14:20:29] [Render thread/INFO]: Created: 256x128 textures/mob_effect-atlas
-[14:27:32] [Render thread/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[14:27:32] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[14:27:32] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
-[14:27:32] [Render thread/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[14:27:32] [Render thread/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[14:27:33] [Server thread/INFO]: Starting integrated minecraft server version 19w46b
-[14:27:33] [Server thread/INFO]: Generating keypair
-[14:27:33] [Server thread/INFO]: Found new data pack vanilla, loading it automatically
-[14:27:33] [Server thread/INFO]: Reloading ResourceManager: Default
-[14:27:35] [Server thread/INFO]: Loaded 6 recipes
-[14:27:37] [Server thread/INFO]: Loaded 825 advancements
-[14:27:42] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[14:27:42] [Render thread/INFO]: Preparing spawn area: 0%
-[14:27:43] [Render thread/INFO]: Preparing spawn area: 0%
-[14:27:43] [Render thread/INFO]: Preparing spawn area: 0%
-[14:27:44] [Render thread/INFO]: Preparing spawn area: 0%
-[14:27:44] [Render thread/INFO]: Preparing spawn area: 0%
-[14:27:45] [Render thread/INFO]: Preparing spawn area: 1%
-[14:27:47] [Render thread/INFO]: Preparing spawn area: 1%
-[14:27:47] [Render thread/INFO]: Preparing spawn area: 1%
-[14:27:47] [Render thread/INFO]: Preparing spawn area: 1%
-[14:27:47] [Render thread/INFO]: Preparing spawn area: 4%
-[14:27:47] [Render thread/INFO]: Preparing spawn area: 4%
-[14:27:48] [Render thread/INFO]: Preparing spawn area: 5%
-[14:27:48] [Render thread/INFO]: Preparing spawn area: 6%
-[14:27:49] [Render thread/INFO]: Preparing spawn area: 8%
-[14:27:49] [Render thread/INFO]: Preparing spawn area: 10%
-[14:27:50] [Render thread/INFO]: Preparing spawn area: 10%
-[14:27:50] [Render thread/INFO]: Preparing spawn area: 12%
-[14:27:51] [Render thread/INFO]: Preparing spawn area: 12%
-[14:27:51] [Render thread/INFO]: Preparing spawn area: 12%
-[14:27:52] [Render thread/INFO]: Preparing spawn area: 17%
-[14:27:52] [Render thread/INFO]: Preparing spawn area: 17%
-[14:27:53] [Render thread/INFO]: Preparing spawn area: 20%
-[14:27:53] [Render thread/INFO]: Preparing spawn area: 22%
-[14:27:54] [Render thread/INFO]: Preparing spawn area: 24%
-[14:27:54] [Render thread/INFO]: Preparing spawn area: 26%
-[14:27:55] [Render thread/INFO]: Preparing spawn area: 26%
-[14:27:55] [Render thread/INFO]: Preparing spawn area: 26%
-[14:27:56] [Render thread/INFO]: Preparing spawn area: 26%
-[14:27:56] [Render thread/INFO]: Preparing spawn area: 30%
-[14:27:57] [Render thread/INFO]: Preparing spawn area: 30%
-[14:27:57] [Render thread/INFO]: Preparing spawn area: 33%
-[14:27:58] [Render thread/INFO]: Preparing spawn area: 34%
-[14:27:58] [Render thread/INFO]: Preparing spawn area: 37%
-[14:27:59] [Render thread/INFO]: Preparing spawn area: 39%
-[14:27:59] [Render thread/INFO]: Preparing spawn area: 39%
-[14:28:00] [Render thread/INFO]: Preparing spawn area: 43%
-[14:28:00] [Render thread/INFO]: Preparing spawn area: 43%
-[14:28:01] [Render thread/INFO]: Preparing spawn area: 47%
-[14:28:02] [Render thread/INFO]: Preparing spawn area: 50%
-[14:28:02] [Render thread/INFO]: Preparing spawn area: 50%
-[14:28:02] [Render thread/INFO]: Preparing spawn area: 54%
-[14:28:03] [Render thread/INFO]: Preparing spawn area: 57%
-[14:28:04] [Render thread/INFO]: Preparing spawn area: 59%
-[14:28:04] [Render thread/INFO]: Preparing spawn area: 62%
-[14:28:05] [Render thread/INFO]: Preparing spawn area: 63%
-[14:28:05] [Render thread/INFO]: Preparing spawn area: 63%
-[14:28:06] [Render thread/INFO]: Preparing spawn area: 67%
-[14:28:06] [Render thread/INFO]: Preparing spawn area: 69%
-[14:28:07] [Render thread/INFO]: Preparing spawn area: 71%
-[14:28:07] [Render thread/INFO]: Preparing spawn area: 74%
-[14:28:07] [Render thread/INFO]: Preparing spawn area: 77%
-[14:28:08] [Render thread/INFO]: Preparing spawn area: 79%
-[14:28:08] [Render thread/INFO]: Preparing spawn area: 82%
-[14:28:09] [Render thread/INFO]: Preparing spawn area: 85%
-[14:28:09] [Render thread/INFO]: Preparing spawn area: 88%
-[14:28:10] [Render thread/INFO]: Preparing spawn area: 91%
-[14:28:11] [Render thread/INFO]: Preparing spawn area: 92%
-[14:28:11] [Render thread/INFO]: Preparing spawn area: 92%
-[14:28:11] [Render thread/INFO]: Time elapsed: 28966 ms
-[14:28:12] [Server thread/INFO]: test[local:E:11fb695b] logged in with entity id 198 at (-256.5, 64.0, -161.5)
-[14:28:12] [Server thread/INFO]: test joined the game
-[14:28:13] [Server thread/INFO]: Saving and pausing game...
-[14:28:13] [Server thread/INFO]: Saving chunks for level 'Testing - Latest Snapshot'/minecraft:overworld
-[14:28:15] [Server thread/INFO]: Saving chunks for level 'Testing - Latest Snapshot'/minecraft:the_nether
-[14:28:15] [Server thread/INFO]: Saving chunks for level 'Testing - Latest Snapshot'/minecraft:the_end
-[14:28:15] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 2342ms or 46 ticks behind
-[14:28:15] [Render thread/INFO]: Loaded 0 advancements
-[14:28:58] [Server thread/INFO]: Saving and pausing game...
-[14:28:58] [Server thread/INFO]: Saving chunks for level 'Testing - Latest Snapshot'/minecraft:overworld
-[14:28:59] [Server thread/INFO]: Saving chunks for level 'Testing - Latest Snapshot'/minecraft:the_nether
-[14:28:59] [Server thread/INFO]: Saving chunks for level 'Testing - Latest Snapshot'/minecraft:the_end
-[14:29:00] [Server thread/INFO]: test lost connection: Disconnected
-[14:29:00] [Server thread/INFO]: test left the game
-[14:29:00] [Server thread/INFO]: Stopping singleplayer server as player logged out
-[14:29:00] [Server thread/INFO]: Stopping server
-[14:29:00] [Server thread/INFO]: Saving players
-[14:29:00] [Server thread/INFO]: Saving worlds
-[14:29:00] [Server thread/INFO]: Saving chunks for level 'Testing - Latest Snapshot'/minecraft:overworld
-[14:29:00] [Server thread/INFO]: ThreadedAnvilChunkStorage (Testing - Latest Snapshot): All chunks are saved
-[14:29:00] [Server thread/INFO]: Saving chunks for level 'Testing - Latest Snapshot'/minecraft:the_nether
-[14:29:00] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[14:29:00] [Server thread/INFO]: Saving chunks for level 'Testing - Latest Snapshot'/minecraft:the_end
-[14:29:00] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[14:29:00] [Server thread/INFO]: ThreadedAnvilChunkStorage (Testing - Latest Snapshot): All chunks are saved
-[14:29:00] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[14:29:00] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[14:29:02] [Render thread/INFO]: Stopping!
+[08:37:25] [Client thread/INFO]: OpenAL initialized.
+[08:37:25] [Client thread/INFO]: Sound engine started
+[08:37:25] [Client thread/INFO]: Created: 1024x512 textures-atlas
+[08:37:26] [Client thread/INFO]: Created: 256x256 textures/particle-atlas
+[08:37:26] [Client thread/INFO]: Created: 256x256 textures/painting-atlas
+[08:37:26] [Client thread/INFO]: Created: 256x128 textures/mob_effect-atlas
+[08:38:16] [Client thread/INFO]: Stopping!
