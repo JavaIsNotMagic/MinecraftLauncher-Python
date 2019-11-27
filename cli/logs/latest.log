@@ -1,6 +1,7 @@
-[08:37:03] [Client thread/WARN]: Skipping bad option: lastServer:
-[08:37:03] [Client thread/INFO]: LWJGL Version: 3.2.1 build 12
-[08:37:03] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
+[19:45:37] [Client thread/INFO]: Setting user: test
+[19:45:43] [Client thread/WARN]: Skipping bad option: lastServer:
+[19:45:43] [Client thread/INFO]: LWJGL Version: 3.2.1 build 12
+[19:45:43] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
 Possible reasons:
 	a) -Djava.library.path is set to a folder containing shared libraries of an older LWJGL version.
 	b) The classpath contains jar files of an older LWJGL version.
@@ -8,7 +9,7 @@ Possible solutions:
 	a) Make sure to not set -Djava.library.path (it is not needed for developing with LWJGL 3) or make
 	   sure the folder it points to contains the shared libraries of the correct LWJGL version.
 	b) Check the classpath and make sure to only have jar files of the same LWJGL version in it.
-[08:37:04] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
+[19:45:43] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
 Possible reasons:
 	a) -Djava.library.path is set to a folder containing shared libraries of an older LWJGL version.
 	b) The classpath contains jar files of an older LWJGL version.
@@ -16,7 +17,7 @@ Possible solutions:
 	a) Make sure to not set -Djava.library.path (it is not needed for developing with LWJGL 3) or make
 	   sure the folder it points to contains the shared libraries of the correct LWJGL version.
 	b) Check the classpath and make sure to only have jar files of the same LWJGL version in it.
-[08:37:04] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
+[19:45:43] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
 Possible reasons:
 	a) -Djava.library.path is set to a folder containing shared libraries of an older LWJGL version.
 	b) The classpath contains jar files of an older LWJGL version.
@@ -24,7 +25,7 @@ Possible solutions:
 	a) Make sure to not set -Djava.library.path (it is not needed for developing with LWJGL 3) or make
 	   sure the folder it points to contains the shared libraries of the correct LWJGL version.
 	b) Check the classpath and make sure to only have jar files of the same LWJGL version in it.
-[08:37:04] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
+[19:45:44] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
 Possible reasons:
 	a) -Djava.library.path is set to a folder containing shared libraries of an older LWJGL version.
 	b) The classpath contains jar files of an older LWJGL version.
@@ -32,7 +33,7 @@ Possible solutions:
 	a) Make sure to not set -Djava.library.path (it is not needed for developing with LWJGL 3) or make
 	   sure the folder it points to contains the shared libraries of the correct LWJGL version.
 	b) Check the classpath and make sure to only have jar files of the same LWJGL version in it.
-[08:37:05] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
+[19:45:45] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
 Possible reasons:
 	a) -Djava.library.path is set to a folder containing shared libraries of an older LWJGL version.
 	b) The classpath contains jar files of an older LWJGL version.
@@ -40,9 +41,9 @@ Possible solutions:
 	a) Make sure to not set -Djava.library.path (it is not needed for developing with LWJGL 3) or make
 	   sure the folder it points to contains the shared libraries of the correct LWJGL version.
 	b) Check the classpath and make sure to only have jar files of the same LWJGL version in it.
-[08:37:07] [Client thread/INFO]: Narrator library successfully loaded
-[08:37:08] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
-[08:37:24] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
+[19:45:46] [Client thread/INFO]: Narrator library successfully loaded
+[19:45:48] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[19:46:03] [Client thread/INFO]: [STDERR]: [LWJGL] [ERROR] Incompatible Java and native library versions detected.
 Possible reasons:
 	a) -Djava.library.path is set to a folder containing shared libraries of an older LWJGL version.
 	b) The classpath contains jar files of an older LWJGL version.
@@ -50,10 +51,10 @@ Possible solutions:
 	a) Make sure to not set -Djava.library.path (it is not needed for developing with LWJGL 3) or make
 	   sure the folder it points to contains the shared libraries of the correct LWJGL version.
 	b) Check the classpath and make sure to only have jar files of the same LWJGL version in it.
-[08:37:25] [Client thread/INFO]: OpenAL initialized.
-[08:37:25] [Client thread/INFO]: Sound engine started
-[08:37:25] [Client thread/INFO]: Created: 1024x512 textures-atlas
-[08:37:26] [Client thread/INFO]: Created: 256x256 textures/particle-atlas
-[08:37:26] [Client thread/INFO]: Created: 256x256 textures/painting-atlas
-[08:37:26] [Client thread/INFO]: Created: 256x128 textures/mob_effect-atlas
-[08:38:16] [Client thread/INFO]: Stopping!
+[19:46:04] [Client thread/INFO]: OpenAL initialized.
+[19:46:04] [Client thread/INFO]: Sound engine started
+[19:46:04] [Client thread/INFO]: Created: 1024x512 textures-atlas
+[19:46:05] [Client thread/INFO]: Created: 256x256 textures/particle-atlas
+[19:46:05] [Client thread/INFO]: Created: 256x256 textures/painting-atlas
+[19:46:05] [Client thread/INFO]: Created: 256x128 textures/mob_effect-atlas
+[19:46:14] [Client thread/INFO]: Stopping!

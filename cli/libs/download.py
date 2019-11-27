@@ -149,6 +149,7 @@ def downloadLibs(file2,version):	#Download libraries used by Minecraft
 			continue	#Continue to next iteration if the URL does not have the 'libraries' subdomain
 #End
 resourcePath = str(os.getcwd()) + "/downloads/mc/assets/objects/"
+indexPath = str(os.getcwd()) + "/downloads/mc/assets/indexes"
 jsonPath = str(os.getcwd()) + "/downloads/mc/data/data.json"
 jsonPath1 = str(os.getcwd()) + "/downloads/mc/data/resources.json"
 dp1 = str(os.getcwd()) + "/downloads/mc/data/full.json"
@@ -156,6 +157,7 @@ assets_list = str(os.getcwd()) + "/downloads/mc/data/assets.json"
 resource_base = "http://resources.download.minecraft.net/"
 try:
 	os.mkdir(resourcePath)	#Attempt to create the folder
+	os.mkdir(indexPath)
 	print("Created path for MC Assets!")
 except:
 	pass	#Ignore if folder exists
@@ -178,7 +180,7 @@ def downloadResources(version, dp):
 				#Make a copy for the Index list
 				index_list = str(os.getcwd()) + "/downloads/mc/assets/indexes/" + version + ".json"
 				ur.urlretrieve(line, index_list)
-				#print("done.")
+				print("Copied index list to minecraft index directory.") #debug
 	f.close()
 	hash_two = []
 	hash_full = []
