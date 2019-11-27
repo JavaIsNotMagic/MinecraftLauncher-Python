@@ -1,2 +1,2 @@
-#Modules that need to be installed in order for MCP to work.
+#Modules that need to be installed in order for mcpy to work.
 

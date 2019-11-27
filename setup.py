@@ -1,11 +1,11 @@
 import setuptools
 setuptools.setup(
-    name="mcpython", # Replace with your own username
-    version="0.0.0.3a",
+    name="mcpy",
+    version="0.1.0",
     author="Connor Tozer",
     author_email="connor.tozer2017@gmail.com",
     long_description="mc-python is a minecraft launcher written entirley in python. This launcher supports all vanilla versions.",
-    description="A minecraft launcher written entirely in Python3",
+    description="A Minecraft Launcher written in Python",
     url="https://github.com/JavaIsNotMagic/MinecraftLauncher-Python",
     packages=setuptools.find_packages(),
     classifiers=[
