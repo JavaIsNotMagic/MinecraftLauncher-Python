@@ -18,5 +18,5 @@ def Launch(uname, version, game_directory, assets_root, atoken, client, classpat
 	launchArgs.extend(args.split(" "))	#Gets the arguments, splits it by spaces, adds the contents of that array to the existing array (https://stackoverflow.com/questions/252703/what-is-the-difference-between-pythons-list-methods-append-and-extend)
 	#print(f"Command to run: {launchArgs}")	#Debug for command to run
 	#Now run Minecraft given the information
-	subprocess.run(launchArgs, shell=False, check=True)
+	subprocess.run(launchArgs)
 #end
