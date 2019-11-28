@@ -177,7 +177,11 @@ def downloadResources(version, dp):
 			if ".json" in line:
 				#print(line)
 				ur.urlretrieve(line, assets_list)
-				#Make a copy for the Index list
+				#Make a copy for the Index list, but make sure the directory exists
+				if not(os.path.isdir(str(os.getcwd()) + "/downloads/mc/assets/indexes/"):
+					os.mkdir(str(os.getcwd()) + "/downloads/mc/assets/indexes")
+				else:
+					pass
 				index_list = str(os.getcwd()) + "/downloads/mc/assets/indexes/" + version + ".json"
 				ur.urlretrieve(line, index_list)
 				print("Copied index list to minecraft index directory.") #debug
