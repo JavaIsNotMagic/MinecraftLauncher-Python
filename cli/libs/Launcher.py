@@ -1,4 +1,4 @@
-import subprocess,os,platform
+import subprocess,os,platform,sys
 def Launch(uname, version, game_directory, assets_root, atoken, client, classpath):
 	launchArgs = ["java"] #Create the launcher arguments array
 	#Natives are system dependent
@@ -6,8 +6,11 @@ def Launch(uname, version, game_directory, assets_root, atoken, client, classpat
 		libpath = str(os.getcwd()) + "/downloads/mc/natives/linux"
 	elif platform.system() == 'Windows':
 		libpath = str(os.getcwd()) + "/downloads/mc/natives/windows"
-	else:
+	elif platform.system == 'macosx' or 'Darwin':
 		libpath = str(os.getcwd()) + "/downloads/mc/natives/osx"
+	else:
+		print("Your system is not supported by mcpy.")
+		sys.exit(1)
 	#end
 	cp = classpath + client
 	empty = "{}"
