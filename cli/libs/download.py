@@ -178,8 +178,8 @@ def downloadResources(version, dp):
 				#print(line)
 				ur.urlretrieve(line, assets_list)
 				#Make a copy for the Index list, but make sure the directory exists
-				if not(os.path.isdir(str(os.getcwd()) + "/downloads/mc/assets/indexes/"):
-					os.mkdir(str(os.getcwd()) + "/downloads/mc/assets/indexes"))
+				if not(os.path.isdir(str(os.getcwd()) + "/downloads/mc/assets/indexes/")):
+					os.mkdir(str(os.getcwd()) + "/downloads/mc/assets/indexes")
 				else:
 					pass
 				index_list = str(os.getcwd()) + "/downloads/mc/assets/indexes/" + version + ".json"
