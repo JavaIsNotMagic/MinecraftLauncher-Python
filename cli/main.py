@@ -12,6 +12,7 @@ utils: various helper functions
 """
 
 import re, os, sys
+from CursesMenu import *	#Self promotion because why not: https://github.com/scoutchorton/CursesMenu
 import urllib.request
 import urllib.error as ue
 import uuid
@@ -32,6 +33,20 @@ except IndexError:
 	pass
 #end
 
+#CursesMenu integration
+	#CursesMenu initialization
+mainMenu = CursesMenu()
+	#CursesMenu widgets initialization
+username = CursesWidget("text", title="In-Game Username:")
+versionType = CursesWidget("list", title="Version Type:")
+versionList = CursesWidget("list", title="Version:")
+	#CursesMenu adding widgets
+mainMenu.addWidget(username, margin=2, id="username")
+mainMenu.addWidget(versionType, margin=2, id="versionType")
+mainMenu.addWidget(versionList, margin=2, id="version")
+
+
+
 write_path = str(os.getcwd()) + "/downloads/urls.txt"
 download_path = str(os.getcwd()) + "/downloads/vm.json"
 version_decoded = str(os.getcwd() + "/downloads/version_decoded.txt")
@@ -46,7 +61,9 @@ try:
 except FileExistsError:
 	pass
 #end
-uname = input("Berfore we begin, please enter your desired in-game username: ")
+mainMenu.draw("username")	#Initate the CursesMenu widget
+#uname = input("Berfore we begin, please enter your desired in-game username: ")
+uname = username.value["text"]
 print("Thank you for using PyMC " + uname + "!")
 print("Decoding Minecraft assets at path " + path)
 print("Stage one: Download Version Manifest")
@@ -79,12 +96,15 @@ except ue.URLError:
 #end
 
 
-print("Stage three: Select Version to Download")
-print("Version Types")
-print("Release (1)" + ' ' + "Snapshot (2)")
-print("Beta (3)" + ' ' + "Alpha (4)")
+#print("Stage three: Select Version to Download")
+#print("Version Types")
+#print("Release (1)" + ' ' + "Snapshot (2)")
+#print("Beta (3)" + ' ' + "Alpha (4)")
+versionType.data = ["Release", "Snapshot", "Beta", "Alpha"]
+mainMenu.draw("versionType")
 try:
-	ans = int(input(">:"))
+	#ans = int(input(">:"))
+	ans = versionType.value["index"] + 1
 	pass
 except KeyboardInterrupt:
 	sys.exit(10)
@@ -93,6 +113,9 @@ except KeyboardInterrupt:
 #Release
 if ans == 1:
 	version = selection.pr()
+	versionList.data = version	#Set array of versions to the data to be displayed by versionList
+	mainMenu.draw("version")
+	version = versionList.value["text"]
 	print("Stage Four: Download Minecraft Assets")
 	print("Downloading Version: " + version)
 	download.getVersionUrl(write_path, version, version_decoded)
@@ -116,6 +139,9 @@ if ans == 1:
 #Snapshot
 if ans == 2:
 	version = selection.psn()
+	versionList.data = version	#Set array of versions to the data to be displayed by versionList
+	mainMenu.draw("version")
+	version = versionList.value["text"]
 	print("Stage Four: Download Minecraft Assets")
 	print("Downloading Version: " + version)
 	download.getVersionUrl(write_path, version, version_decoded)
@@ -139,6 +165,9 @@ if ans == 2:
 #Beta
 if ans == 3:
 	version = selection.pb()
+	versionList.data = version	#Set array of versions to the data to be displayed by versionList
+	mainMenu.draw("version")
+	version = versionList.value["text"]
 	print("Stage Four: Download Minecraft Assets")
 	print("Downloading Version: " + version)
 	download.getVersionUrl(write_path, version, version_decoded)
@@ -160,6 +189,9 @@ if ans == 3:
 #Alpha
 if ans == 4:
 	version = selection.pa()
+	versionList.data = version	#Set array of versions to the data to be displayed by versionList
+	mainMenu.draw("version")
+	version = versionList.value["text"]
 	print("Stage Four: Download Minecraft Assets")
 	print("Downloading Version: " + version)
 	download.getVersionUrl(write_path, version, version_decoded)
