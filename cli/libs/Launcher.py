@@ -1,10 +1,10 @@
-import subprocess,sys,os
+import subprocess,os,platform
 def Launch(uname, version, game_directory, assets_root, atoken, client, classpath):
 	launchArgs = ["java"] #Create the launcher arguments array
 	#Natives are system dependent
-	if sys.platform == "linux":
+	if platform.system() == "Linux":
 		libpath = str(os.getcwd()) + "/downloads/mc/natives/linux"
-	elif sys.platform == 'nt':
+	elif platform.system() == 'Windows':
 		libpath = str(os.getcwd()) + "/downloads/mc/natives/windows"
 	else:
 		libpath = str(os.getcwd()) + "/downloads/mc/natives/osx"
