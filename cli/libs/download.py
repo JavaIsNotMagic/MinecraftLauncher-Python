@@ -9,9 +9,10 @@ urlparse: General URL classes.
 json: JSON handler module: needed to decode Minecraft's .json files
 zipfile: Handles Minecraft .jar files, allows the natives to be auto extracted.
 utils: various helper functions
+platform: Module to get system info
 """
 
-import re,sys,os,traceback
+import re,sys,os,traceback,platform
 import urllib.request as ur
 import urllib.error as ue
 from urllib.parse import urlparse as up

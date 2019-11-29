@@ -1,5 +1,13 @@
 import subprocess,os,platform,sys
 def Launch(uname, version, game_directory, assets_root, atoken, client, classpath):
+	#Test to see if java is installed
+	testArgs = ["java", "--version"]
+	try:
+		subprocess.run(testArgs)
+	except:
+		print("Please install Java on your system to use mcpy.")
+		sys.exit(1)
+	#end
 	launchArgs = ["java"] #Create the launcher arguments array
 	#Natives are system dependent
 	if platform.system() == "Linux":
