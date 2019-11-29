@@ -111,7 +111,7 @@ def downloadLibs(file2,version):	#Download libraries used by Minecraft
 				ur.urlretrieve(line, savePath)
 				#Now save that path to the classpath.
 				with open(cp, "a") as r:
-					if sys.platform.startswith('nt'):
+					if platform.system() == "Windows":
 						sep = ';'
 					else:
 						sep = ":"
