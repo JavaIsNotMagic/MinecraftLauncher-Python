@@ -1,7 +1,7 @@
 import subprocess,os,platform,sys
 def Launch(uname, version, game_directory, assets_root, atoken, client, classpath):
 	#Test to see if java is installed
-	testArgs = ["java", "--version"]
+	testArgs = ["java", "-version"]
 	try:
 		subprocess.run(testArgs)
 	except:
