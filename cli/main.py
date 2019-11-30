@@ -127,7 +127,7 @@ if ans == 1:
 	print("Done!")
 	print("Stage Six: Launching Minecraft " + version)
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
-	atoken = uuid.uuid4().hex
+	atoken = utils.get_token(uname)
 	client = str(os.getcwd()) + "/downloads/mc/versions/client" + version + ".jar"
 	cp = path + "/downloads/mc/data/classpath" + version + ".txt"
 	classpath = read_file(cp)
@@ -153,7 +153,7 @@ if ans == 2:
 	print("Done!")
 	print("Stage Six: Launching Minecraft " + version)
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
-	atoken = uuid.uuid4().hex
+	atoken = utils.get_token(uname)
 	client = str(os.getcwd()) + "/downloads/mc/versions/client" + version + ".jar"
 	cp = path + "/downloads/mc/data/classpath" + version + ".txt"
 	classpath = read_file(cp)
@@ -179,7 +179,7 @@ if ans == 3:
 	print("Done!")
 	print("Stage Six: Launching Minecraft " + version)
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
-	atoken = uuid.uuid4().hex
+	atoken = utils.get_token(uname)
 	client = str(os.getcwd()) + "/downloads/mc/versions/client" + version + ".jar"
 	cp = path + "/downloads/mc/data/classpath" + version + ".txt"
 	classpath = read_file(cp)
@@ -203,7 +203,7 @@ if ans == 4:
 	print("Done!")
 	print("Stage Six: Launching Minecraft " + version)
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
-	atoken = uuid.uuid4().hex
+	atoken = utils.get_token(uname)
 	client = str(os.getcwd()) + "/downloads/mc/versions/client" + version + ".jar"
 	cp = path + "/downloads/mc/data/classpath" + version + ".txt"
 	classpath = read_file(cp)

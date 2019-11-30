@@ -53,3 +53,21 @@ def selectionHelper(file):
 	#end
 	return release_list, snapshot_list, beta_list, alpha_list
 #end
+import json,uuid
+def get_token(user):
+	path = str(os.getcwd())
+	atoken = str(uuid.uuid1()).strip('UUID')
+	with open(path + "/minecraft/usernamecache.json", "w+") as f:
+		f.write("{")
+		f.write("\n")
+		f.write('"' + f"{atoken}: {user}" + '"')
+		f.write("}")
+		f.write("\n")
+		f.flush()
+		f.close()
+	#end
+#end
+	#end
+	print("Got user authentication token")
+	return atoken
+#end
