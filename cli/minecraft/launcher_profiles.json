@@ -20,11 +20,11 @@
   "clientToken": "650ccf99-9177-49ac-be12-bfac6c3ba3ae",
   "authenticationDatabase": {
     "650ccf99917749acbe12bfac6c3ba3ae": {
-      "displayName": "test",
+      "displayName": "default",
       "accessToken": "null",
-      "userid": "test",
+      "userid": "default",
       "uuid": "650ccf99-9177-49ac-be12-bfac6c3ba3ae",
-      "username": "test"
+      "username": "default"
     },
     
 } 
