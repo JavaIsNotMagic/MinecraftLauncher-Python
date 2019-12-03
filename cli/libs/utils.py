@@ -11,6 +11,9 @@ def decode_urls(dp, wp):
 		os.mkdir(f'{os.getcwd()}/downloads/mc/data')
 	except FileExistsError:
 		pass
+	#Probably caused by a glitch in the Matrix or we are testing new code. Ignore this.	
+	except FileNotFoundError:
+		pass
 	b = open(wp, "w+")
 	for url in links:
 		b.write(f"{url[0]}\n")

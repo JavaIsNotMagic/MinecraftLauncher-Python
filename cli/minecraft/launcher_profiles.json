@@ -4,9 +4,9 @@
       "name": "(Default)",
       "lastVersionId": "Wolfram"
     },
-    "Custom Minecraft Launcher": {
-      "name": "Custom Minecraft Launcher",
-      "gameDir": "/home/ctozer/Desktop/Development/Python/mcpy/cli/minecraft",
+    "Unmodded": {
+      "name": "Unmodded",
+      "gameDir": "/home/ctozer/Desktop/Development/Python/mcpy/cli/minecraft/Unmodded",
       "lastVersionId": "1.7.10",
       "allowedReleaseTypes": [
         "old_beta",
@@ -16,15 +16,20 @@
       ],
       "launcherVisibilityOnGameClose": "hide launcher and re-open when game closes"
     },
-  "selectedProfile": "custom",
-  "clientToken": "650ccf99-9177-49ac-be12-bfac6c3ba3ae",
+  },
+  "selectedProfile": "default",
+  "clientToken": "36edbf7c-131e-11ea-901f-1c3e84b8e2aa",
   "authenticationDatabase": {
-    "650ccf99917749acbe12bfac6c3ba3ae": {
+    "d250e536042c407183e484eadf2c2b15": {
       "displayName": "default",
       "accessToken": "null",
       "userid": "default",
-      "uuid": "650ccf99-9177-49ac-be12-bfac6c3ba3ae",
+      "uuid": "d250e536-042c-4071-83e4-84eadf2c2b15",
       "username": "default"
     },
-    
-} 
+  "selectedUser": "36edbf7c131e11ea901f1c3e84b8e2aa",
+  "launcherVersion": {
+    "name": "1.6.13",
+    "format": 17
+  }
+}

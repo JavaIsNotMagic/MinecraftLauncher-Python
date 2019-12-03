@@ -1,6 +1,6 @@
 Metadata-Version: 1.2
 Name: mcpy
-Version: 0.0.1
+Version: 0.0.4.1
 Summary: A Minecraft Launcher written in Python
 Home-page: https://github.com/JavaIsNotMagic/MinecraftLauncher-Python
 Author: Connor Tozer

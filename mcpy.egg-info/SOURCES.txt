@@ -1,3 +1,4 @@
+README.md
 setup.py
 mcpy.egg-info/PKG-INFO
 mcpy.egg-info/SOURCES.txt

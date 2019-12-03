@@ -11,7 +11,7 @@ def reqs():
 # packages=setuptools.find_packages(),
 setuptools.setup(
     name="mcpy",
-    version="0.0.1",
+    version="0.0.4.1",
     author="Connor Tozer",
     author_email="connor.tozer2017@gmail.com",
     long_description="mc-python is a minecraft launcher written entirley in python. This launcher supports all vanilla versions.",
