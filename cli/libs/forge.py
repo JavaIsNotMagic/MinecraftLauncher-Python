@@ -21,7 +21,7 @@ def getForgeVersions(version):
 	f = open(store_decode, "r")	#Opens the raw HTML file
 	rawHTML = f.read()	#Reads content of the file
 	f.close()	#Closes the file
-	decodeRE = re.finditer(r"<a href=\"(?P<URL>.+)\">\s+<i class=\".+\"></i>\s+Universal", rawHTML)	#Examine regex here: https://regex101.com/r/VnjD9o/1/
+	decodeRE = re.finditer(r"<a href=\"https://adfoc\.us/serve/sitelinks/\?id=\d+&url=(?P<URL>.+)\">\s+<i class=\".+\"></i>\s+Universal", rawHTML)	#Examine regex here: https://regex101.com/r/VnjD9o/1/
 	with open(final, "w") as finalFile:	#Opens the final URL file
 		for match in decodeRE:	#Goes through every match
 			finalFile.write(match.groupdict()["URL"] + "\n")	#Write changes to URL file
