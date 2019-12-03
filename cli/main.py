@@ -22,6 +22,7 @@ sys.path.append(libs_path)
 import selection, download, clean, utils
 from Launcher import Launch
 from FileUtils import read_file
+from forge import getForgeVersions, parseVersions
 #CLI Check
 try:
 	if sys.argv[1] == 'clean':
@@ -100,7 +101,7 @@ except ue.URLError:
 #print("Version Types")
 #print("Release (1)" + ' ' + "Snapshot (2)")
 #print("Beta (3)" + ' ' + "Alpha (4)")
-versionType.data = ["Release", "Snapshot", "Beta", "Alpha"]
+versionType.data = ["Release", "Snapshot", "Beta", "Alpha", "Forge"]
 mainMenu.draw("versionType")
 try:
 	#ans = int(input(">:"))
@@ -209,5 +210,20 @@ if ans == 4:
 	classpath = read_file(cp)
 	Launch(uname, version, gameDir, assetsDir, atoken, client, classpath)
 	clean.clean()
+#end
 
+#FORGE
+if ans == 5:
+	vanillaVersions = selection.pr()
+	versionList.data = vanillaVersions
+	mainMenu.draw("version")
+	selectedVanilla = versionList.value["text"]
+	getForgeVersions(selectedVanilla)
+	forgeVersions = parseVersions(selectedVanilla)
+	versionList.title = "Forge Version:"
+	versionList.data = forgeVersions
+	mainMenu.draw("version")
+	forgeVersion = parseVersions(selectedVanilla, versionList.value["text"])
+	print(forgeVersion)
+	#use versionList.value["text"] for the version of for selected
 #end
