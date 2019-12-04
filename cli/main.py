@@ -22,7 +22,7 @@ sys.path.append(libs_path)
 import selection, download, clean, utils
 from Launcher import Launch
 from FileUtils import read_file
-from forge import getForgeVersions, parseVersions
+from forge import getForgeVersions, parseVersions, fetchForgeSuperVersion
 #CLI Check
 try:
 	if sys.argv[1] == 'clean':
@@ -215,7 +215,7 @@ if ans == 4:
 #FORGE
 if ans == 5:
 	vanillaVersions = selection.pr()
-	versionList.data = vanillaVersions
+	versionList.data = fetchForgeSuperVersion()
 	mainMenu.draw("version")
 	selectedVanilla = versionList.value["text"]
 	getForgeVersions(selectedVanilla)

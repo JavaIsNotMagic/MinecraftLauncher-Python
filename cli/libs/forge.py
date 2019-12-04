@@ -4,6 +4,19 @@ from urllib.request import urlretrieve as ur
 sys.path.append(str(os.getcwd()) + "/libs")
 import utils
 
+def fetchForgeSuperVersion():
+	htmlFileLocation = ur("https://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.7.10.html")[0]	#Gets the contents at the URL, saves them to a tmpfile and gets the string to the path of that file
+	fo = open(htmlFileLocation, "r")	#file object for HTML
+	pageData = fo.read()	#Read HTML
+	fo.close()	#Close HTML file
+	print(pageData)
+	pageSearch = re.finditer(r"index_((?:[0-9]+\.*){2,3})\.html", pageData)
+	versions = []
+	for match in pageSearch:
+		print(match.group(1))
+		versions.append(match.group(1))
+	return versions
+
 #Return the Forge versions for the selected Vanilla version
 def getForgeVersions(version):
 	url = f"http://files.minecraftforge.net/maven/net/minecraftforge/forge/index_{version}.html"
