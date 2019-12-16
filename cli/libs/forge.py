@@ -121,11 +121,13 @@ def downloadForgeLibs(version):
 		for x in data:
 			try:
 				if "name" in x:
-					print(data[length - data.index(x)])
+					print(data[data.index(x)])
 				else:
 					pass
 			except IndexError:
 				pass
+		#end for
 		n+=1
 		del data[:]
 	#end
+#end func
