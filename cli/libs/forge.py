@@ -1,4 +1,4 @@
-import sys,os,re
+import sys,os,re,json
 from urllib.request import urlretrieve as ur
 #Custom imports
 sys.path.append(str(os.getcwd()) + "/libs")
@@ -9,11 +9,11 @@ def fetchForgeSuperVersion():
 	fo = open(htmlFileLocation, "r")	#file object for HTML
 	pageData = fo.read()	#Read HTML
 	fo.close()	#Close HTML file
-	print(pageData)
+	#print(pageData) #debug
 	pageSearch = re.finditer(r"index_((?:[0-9]+\.*){2,3})\.html", pageData)
 	versions = []
 	for match in pageSearch:
-		print(match.group(1))
+		#print(match.group(1)) #debug
 		versions.append(match.group(1))
 	return versions
 
@@ -105,3 +105,27 @@ def parseVersions(version, returnVersion=None):
 		for match in versionRe:	#For every match
 			versions.append(match.groupdict()["version"])	#Add the match to the list of versions
 		return versions	#Returns the list of versions
+#end
+
+def downloadForgeLibs(version):
+	ref_url = f"https://raw.githubusercontent.com/MinecraftForge/MinecraftForge/1.14.x/jsons/{version}-rel.json"
+	data = []
+	print(ref_url)
+	forgeLocation = ur(ref_url)[0]
+	for line in open(forgeLocation, 'r'):
+		data.append(line)
+	#end
+	length = len(data)
+	n = 0
+	while n < length:
+		for x in data:
+			try:
+				if "name" in x:
+					print(data[length - data.index(x)])
+				else:
+					pass
+			except IndexError:
+				pass
+		n+=1
+		del data[:]
+	#end
