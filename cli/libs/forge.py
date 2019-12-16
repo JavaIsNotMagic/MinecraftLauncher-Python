@@ -1,5 +1,6 @@
 import sys,os,re,json
 from urllib.request import urlretrieve as ur
+from urllib.error import *
 #Custom imports
 sys.path.append(str(os.getcwd()) + "/libs")
 import utils
@@ -112,22 +113,14 @@ def downloadForgeLibs(version):
 	data = []
 	print(ref_url)
 	forgeLocation = ur(ref_url)[0]
-	for line in open(forgeLocation, 'r'):
-		data.append(line)
-	#end
-	length = len(data)
-	n = 0
-	while n < length:
-		for x in data:
-			try:
-				if "name" in x:
-					print(data[data.index(x)])
-				else:
-					pass
-			except IndexError:
-				pass
-		#end for
-		n+=1
+	with open(forgeLocation, 'r') as jsonFile:
+		d = jsonFile.read()	#Raw data from the file
+		jsonFile.close()
+		jsonIter = re.finditer(r'^\ {6}\"name\": \"(?P<name>[^\"@]+)', d, re.M)	#Search file for regex
+		for match in jsonIter:	#Iterate through all the matches
+			mData = match.groupdict()["name"]
+			m_data = "/".join(mData.split('.')).replace(r":", "/")	#Match DATA
+			data.append(m_data)
+			print(m_data)
+		#end
 		del data[:]
-	#end
-#end func
