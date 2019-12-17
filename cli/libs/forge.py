@@ -107,9 +107,20 @@ def parseVersions(version, returnVersion=None):
 			versions.append(match.groupdict()["version"])	#Add the match to the list of versions
 		return versions	#Returns the list of versions
 #end
-
+def downloadForgeJar(url, version):
+	try:
+		os.mkdir(str(os.getcwd()) + "/downloads/mc/forge")
+	except FileExistsError:
+		pass
+	#end
+	print(f"Downloading Forge for version {version}")
+	forge_save_path = str(os.getcwd()) + "/downloads/mc/forge/" + "forge" + version + ".jar"
+	ur(url, forge_save_path)
+#end
 def downloadForgeLibs(version):
 	ref_url = f"https://raw.githubusercontent.com/MinecraftForge/MinecraftForge/1.14.x/jsons/{version}-rel.json"
+	download_url = "http://repo.maven.apache.org/maven2"
+	super_path = str(os.getcwd()) + "/downloads/mc/jars"
 	data = []
 	print(ref_url)
 	forgeLocation = ur(ref_url)[0]
@@ -123,53 +134,47 @@ def downloadForgeLibs(version):
 			nameSplit = list(re.search(r"^(?P<path>[^:]+):(?P<name>[^:]+):(?P<version>[^:]+)", mData).groups())
 			nameSplit[0] = nameSplit[0].replace(r".", r"/")
 			m_data = "/".join(nameSplit)
-			print(m_data)
-			#m_data = "/".join(mData.split('.')).replace(r":", "/")	#Match DATA
-			#data.append(m_data)
+			#print(m_data) #debug
+			lib_url = f"{download_url}/{nameSplit[0]}/{nameSplit[1]}/{nameSplit[2]}/{nameSplit[1]}-{nameSplit[2]}.jar"
+			#Split the path into diectories
+			dirs = nameSplit[0].split(os.sep)
+			try:
+				for x in dirs:
+					if os.path.exists(super_path + "/" + x):
+						#Path already exists.
+						super_path = super_path + "/" + x
+						pass
+					else:
+						os.mkdir(super_path + "/" + x)
+						super_path = super_path + "/" + x
+			except FileExistsError:
+				pass
+			#end
+			print("Downloading: " + lib_url)
+			try:
+				lib_name = f"{nameSplit[1]}-{nameSplit[2]}.jar"
+				ur(lib_url, super_path + "/" + lib_name)
+				#add lib to classpath
+				cp = str(os.getcwd()) + "/downloads/mc/data/classpath" + version + ".txt"
+				with open(cp, "a") as cd:
+					if sys.platform.startswith('nt'):
+						sep = ';'
+					else:
+						sep = ":"
+					#End
+					cd.write(super_path + "/" + lib_name + sep)
+					other_lib = f"/home/ctozer/Desktop/Development/Python/mcpy/cli/downloads/mc/jars/net/minecraft/launchwrapper/1.5/launchwrapper-1.5.jar"
+					cd.write(other_lib + sep)
+					forge_ver = f"/home/ctozer/Desktop/Development/Python/mcpy/cli/downloads/mc/forge/forge{version}.jar"
+					cd.write(forge_ver)
+					thing = "/home/ctozer/Desktop/Development/Python/mcpy/cli/downloads/mc/jars/net/sf/jopt-simple/jopt-simple/4.6/jopt-simple-4.6.jar"
+					cd.write(thing)
+					cd.close()
+			except HTTPError:
+				print("Cannot download library. Skipping...")
+				pass
 		#end
 		del data[:]
+		print("Done!")
 	#end
 #end
-
-"""
-net/minecraft/launchwrapper/1.9
-
-path.replace(., /)
-[path, name, version].join(/)
-
-path net.minecraft -> net/minecraft
-path/name/version
-
-
-(path net.minecraft):(name launchwrapper):(version 1.9)
-org.ow2.asm:asm-all:4.1
-org.scala-lang:scala-library:2.10.2
-org.scala-lang:scala-compiler:2.10.2
-java3d:vecmath:1.3.1
-net.sf.trove4j:trove4j:3.0.3
-com.ibm.icu:icu4j-core-mojang:51.2
-net.sf.jopt-simple:jopt-simple:4.5
-lzma:lzma:0.0.1
-com.paulscode:codecjorbis:20101023
-com.paulscode:codecwav:20101023
-com.paulscode:libraryjavasound:20101123
-com.paulscode:librarylwjglopenal:20100824
-com.paulscode:soundsystem:20120107
-io.netty:netty-all:4.0.10.Final
-com.google.guava:guava:15.0
-org.apache.commons:commons-lang3:3.1
-commons-io:commons-io:2.4
-net.java.jinput:jinput:2.0.5
-net.java.jutils:jutils:1.0.0
-com.google.code.gson:gson:2.2.4
-com.mojang:authlib:1.3
-org.apache.logging.log4j:log4j-api:2.0-beta9
-org.apache.logging.log4j:log4j-core:2.0-beta9
-org.lwjgl.lwjgl:lwjgl:2.9.0
-org.lwjgl.lwjgl:lwjgl_util:2.9.0
-org.lwjgl.lwjgl:lwjgl-platform:2.9.0
-org.lwjgl.lwjgl:lwjgl:2.9.1-nightly-20131017
-org.lwjgl.lwjgl:lwjgl_util:2.9.1-nightly-20131017
-org.lwjgl.lwjgl:lwjgl-platform:2.9.1-nightly-20131017
-net.java.jinput:jinput-platform:2.0.5
-"""

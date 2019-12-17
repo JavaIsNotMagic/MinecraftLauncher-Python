@@ -118,6 +118,8 @@ def downloadLibs(file2,version):	#Download libraries used by Minecraft
 						sep = ":"
 					#End
 					r.write(savePath + sep)
+					other_lib = f"/home/ctozer/Desktop/Development/Python/mcpy/cli/downloads/mc/jars/net/minecraft/launchwrapper/1.5/launchwrapper-1.5.jar"
+					r.write(other_lib + sep)
 					r.flush()
 					r.close()
 					print("Wrote path: " + savePath + " to classpath") # DEBUG

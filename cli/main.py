@@ -20,9 +20,9 @@ import uuid
 libs_path = str(os.getcwd())+ "/libs"
 sys.path.append(libs_path)
 import selection, download, clean, utils
-from Launcher import Launch
+from Launcher import Launch,LaunchForge
 from FileUtils import read_file
-from forge import getForgeVersions, parseVersions, fetchForgeSuperVersion, downloadForgeLibs
+from forge import getForgeVersions, parseVersions, fetchForgeSuperVersion, downloadForgeLibs, downloadForgeJar
 #CLI Check
 try:
 	if sys.argv[1] == 'clean':
@@ -224,7 +224,16 @@ if ans == 5:
 	versionList.data = forgeVersions
 	mainMenu.draw("version")
 	forgeVersion = parseVersions(selectedVanilla, versionList.value["text"])
-	print(forgeVersion)
+	#print(forgeVersion) #debug
 	#use versionList.value["text"] for the version.
+	downloadForgeJar(forgeVersion, selectedVanilla)
 	downloadForgeLibs(selectedVanilla)
+	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
+	atoken = utils.get_token(uname)
+	version = selectedVanilla
+	client = str(os.getcwd()) + "/downloads/mc/forge/" + "forge" + version + ".jar"
+	cp = path + "/downloads/mc/data/classpath" + version + ".txt"
+	classpath = read_file(cp)
+	LaunchForge(uname, version, gameDir, assetsDir, atoken, client, classpath)
+	clean.clean()
 #end
