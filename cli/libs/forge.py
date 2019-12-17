@@ -119,8 +119,57 @@ def downloadForgeLibs(version):
 		jsonIter = re.finditer(r'^\ {6}\"name\": \"(?P<name>[^\"@]+)', d, re.M)	#Search file for regex
 		for match in jsonIter:	#Iterate through all the matches
 			mData = match.groupdict()["name"]
-			m_data = "/".join(mData.split('.')).replace(r":", "/")	#Match DATA
-			data.append(m_data)
+			#print(mData)
+			nameSplit = list(re.search(r"^(?P<path>[^:]+):(?P<name>[^:]+):(?P<version>[^:]+)", mData).groups())
+			nameSplit[0] = nameSplit[0].replace(r".", r"/")
+			m_data = "/".join(nameSplit)
 			print(m_data)
+			#m_data = "/".join(mData.split('.')).replace(r":", "/")	#Match DATA
+			#data.append(m_data)
 		#end
 		del data[:]
+	#end
+#end
+
+"""
+net/minecraft/launchwrapper/1.9
+
+path.replace(., /)
+[path, name, version].join(/)
+
+path net.minecraft -> net/minecraft
+path/name/version
+
+
+(path net.minecraft):(name launchwrapper):(version 1.9)
+org.ow2.asm:asm-all:4.1
+org.scala-lang:scala-library:2.10.2
+org.scala-lang:scala-compiler:2.10.2
+java3d:vecmath:1.3.1
+net.sf.trove4j:trove4j:3.0.3
+com.ibm.icu:icu4j-core-mojang:51.2
+net.sf.jopt-simple:jopt-simple:4.5
+lzma:lzma:0.0.1
+com.paulscode:codecjorbis:20101023
+com.paulscode:codecwav:20101023
+com.paulscode:libraryjavasound:20101123
+com.paulscode:librarylwjglopenal:20100824
+com.paulscode:soundsystem:20120107
+io.netty:netty-all:4.0.10.Final
+com.google.guava:guava:15.0
+org.apache.commons:commons-lang3:3.1
+commons-io:commons-io:2.4
+net.java.jinput:jinput:2.0.5
+net.java.jutils:jutils:1.0.0
+com.google.code.gson:gson:2.2.4
+com.mojang:authlib:1.3
+org.apache.logging.log4j:log4j-api:2.0-beta9
+org.apache.logging.log4j:log4j-core:2.0-beta9
+org.lwjgl.lwjgl:lwjgl:2.9.0
+org.lwjgl.lwjgl:lwjgl_util:2.9.0
+org.lwjgl.lwjgl:lwjgl-platform:2.9.0
+org.lwjgl.lwjgl:lwjgl:2.9.1-nightly-20131017
+org.lwjgl.lwjgl:lwjgl_util:2.9.1-nightly-20131017
+org.lwjgl.lwjgl:lwjgl-platform:2.9.1-nightly-20131017
+net.java.jinput:jinput-platform:2.0.5
+"""
