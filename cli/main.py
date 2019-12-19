@@ -23,6 +23,7 @@ import selection, download, clean, utils
 from Launcher import Launch,LaunchForge
 from FileUtils import read_file
 from forge import getForgeVersions, parseVersions, fetchForgeSuperVersion, downloadForgeLibs, downloadForgeJar
+from check_libs import check
 #CLI Check
 try:
 	if sys.argv[1] == 'clean':
@@ -127,6 +128,7 @@ if ans == 1:
 	download.extractNatives(rpath)
 	print("Done!")
 	print("Stage Six: Launching Minecraft " + version)
+	check(version)
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = utils.get_token(uname)
 	client = str(os.getcwd()) + "/downloads/mc/versions/client" + version + ".jar"
@@ -153,6 +155,7 @@ if ans == 2:
 	download.extractNatives(rpath)
 	print("Done!")
 	print("Stage Six: Launching Minecraft " + version)
+	check(version)
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = utils.get_token(uname)
 	client = str(os.getcwd()) + "/downloads/mc/versions/client" + version + ".jar"
@@ -179,6 +182,7 @@ if ans == 3:
 	download.extractNatives(rpath)
 	print("Done!")
 	print("Stage Six: Launching Minecraft " + version)
+	check(version)
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
 	atoken = utils.get_token(uname)
 	client = str(os.getcwd()) + "/downloads/mc/versions/client" + version + ".jar"
@@ -204,6 +208,7 @@ if ans == 4:
 	print("Done!")
 	print("Stage Six: Launching Minecraft " + version)
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
+	check(version)
 	atoken = utils.get_token(uname)
 	client = str(os.getcwd()) + "/downloads/mc/versions/client" + version + ".jar"
 	cp = path + "/downloads/mc/data/classpath" + version + ".txt"
@@ -229,6 +234,7 @@ if ans == 5:
 	downloadForgeJar(forgeVersion, selectedVanilla)
 	downloadForgeLibs(selectedVanilla)
 	assetsDir = str(os.getcwd()) + "/downloads/mc/assets"
+	check(selectedVanilla)
 	atoken = utils.get_token(uname)
 	version = selectedVanilla
 	client = str(os.getcwd()) + "/downloads/mc/forge/" + "forge" + version + ".jar"

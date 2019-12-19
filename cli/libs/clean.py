@@ -1,26 +1,30 @@
-"""
-os: Operating System module, helper for file I/O operations (File exists check, etc)
-"""
 from os import walk,getcwd,remove
-downloads = str(getcwd()) + "/downloads/"
+
 data = str(getcwd()) + "/downloads/mc/data"
+data_launcher = str(getcwd()) + "/downloads/mc"
+files = []
+files1=[]
+
 def clean():
-	#Final stage
-	f = []
-	g = []
-	for(dirpath, dirnames, filenames) in walk(data):
-		g.extend(filenames)
-		break
+	for(dirpath, dirnames,filenames) in walk(data):
+		files.extend(filenames)
 	#end
-	for(dirpath, dirnames, filenames) in walk(downloads):
-		f.extend(filenames)
-		break
+
+	for(dirpath, dirnames,filenames) in walk(data_launcher):
+        	files1.extend(filenames)
 	#end
-	for i in g:
-		print("Stage Seven: Removing " + data + "/" + i) #debug
-		remove(data + "/" + i)
-	#End
-	for a in f:
-		print("Stage Eight: Removing " + downloads + "/" + a) #debug
-		remove(downloads + "/" + a)
+
+	for x in files:
+		#print(f"Removing file {data + '/' + x}") 
+		try:
+			remove(data + "/" + x)
+		except FileNotFoundError:
+			pass
+	#end
+	for a in files1:
+		#print(f"Removing file {data_launcher + '/' + a}")
+		try:
+			remove(data_launcher + "/" + a)
+		except FileNotFoundError:
+			pass
 #end
