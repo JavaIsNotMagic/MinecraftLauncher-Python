@@ -41,40 +41,6 @@ def getForgeVersions(version):
 			finalFile.write(match.groupdict()["URL"] + "\n")	#Write changes to URL file
 			#print(match.groupdict()["URL"])	#Debug
 		finalFile.close()	#Close URL file
-	#for line in f.readlines():
-	#	if "(Direct Download)" in line:
-	#		if "universal" in line:
-	#			#print(line) #debug
-	#			with open(store, "w") as r:
-	#				r.write(re.sub('\s+',' ', line))
-	#				r.write('\n')
-	#				r.flush()
-	#				r.close()
-	#			#end
-	#		#end
-	#	else:
-	#		pass
-	#	#end
-	##end
-	#lines = []
-	#with open(store, "r") as t:
-	#	for line in t.readlines():
-	#		if "<a href=" in line:
-	#			#print(line.replace(">", "").replace("<", "").replace("br", "").replace("a href=", "").replace(r'"', "").replace(r"(Direct Download)", "").replace(r"/a", "")) #debug
-	#			lines.append(line.replace(">","").replace("<","").replace("br","").replace("a href=","").replace(r'"',"").replace(r"(Direct Download)","").replace(r"/a",""))
-	#	#end
-	#	t.flush()
-	#	t.close
-	##end
-	#with open(final, "w") as y:
-	#	for x in lines:
-	#		url_full = url_base + x
-	#		y.write(re.sub('\s+','', url_full))
-	#		y.write('\n')
-	#		y.flush()
-	#	#end
-	#	y.close()
-	#end
 	print(f"Got Forge versions for {version}!")
 #end
 
@@ -120,7 +86,8 @@ def downloadForgeJar(url, version):
 def downloadForgeLibs(version):
 	ref_url = f"https://raw.githubusercontent.com/MinecraftForge/MinecraftForge/1.14.x/jsons/{version}-rel.json"
 	download_url = "http://repo.maven.apache.org/maven2"
-	super_path = str(os.getcwd()) + "/downloads/mc/jars"
+	super_path_start = str(os.getcwd()) + "/downloads/mc/jars"
+	forge_jar = str(os.getcwd()) + "/downloads/mc/forge"
 	data = []
 	print(ref_url)
 	forgeLocation = ur(ref_url)[0]
@@ -140,13 +107,13 @@ def downloadForgeLibs(version):
 			dirs = nameSplit[0].split(os.sep)
 			try:
 				for x in dirs:
-					if os.path.exists(super_path + "/" + x):
+					if os.path.exists(super_path_start + "/" + x):
 						#Path already exists.
-						super_path = super_path + "/" + x
+						super_path = super_path_start + "/" + x
 						pass
 					else:
-						os.mkdir(super_path + "/" + x)
-						super_path = super_path + "/" + x
+						os.mkdir(super_path_start + "/" + x)
+						super_path = super_path_start + "/" + x
 			except FileExistsError:
 				pass
 			#end
@@ -163,18 +130,29 @@ def downloadForgeLibs(version):
 						sep = ":"
 					#End
 					cd.write(super_path + "/" + lib_name + sep)
-					other_lib = f"/home/ctozer/Desktop/Development/Python/mcpy/cli/downloads/mc/jars/net/minecraft/launchwrapper/1.5/launchwrapper-1.5.jar"
-					cd.write(other_lib + sep)
-					forge_ver = f"/home/ctozer/Desktop/Development/Python/mcpy/cli/downloads/mc/forge/forge{version}.jar"
-					cd.write(forge_ver)
-					thing = "/home/ctozer/Desktop/Development/Python/mcpy/cli/downloads/mc/jars/net/sf/jopt-simple/jopt-simple/4.6/jopt-simple-4.6.jar"
-					cd.write(thing)
-					cd.close()
 			except HTTPError:
 				print("Cannot download library. Skipping...")
 				pass
 		#end
 		del data[:]
 		print("Done!")
+		cd.close()
+		with open(cp, "a") as f:
+			if sys.platform.startswith('nt'):
+				sep = ';'
+			else:
+				sep = ":"
+			#End
+			
+			#TODO: Find out why the following libs aren't already in the classpath
+			f.write(f"{super_path_start}/net/minecraft/launchwrapper/1.12/launchwrapper-1.12.jar" + sep)
+			f.write(f"{super_path_start}/org/apache/logging/log4j/log4j-api/2.0-beta9/log4j-api-2.0-beta9.jar" + sep)
+			f.write(f"{super_path_start}/com/google/guava/guava/17.0/guava-17.0.jar" + sep)
+			f.write(f"{super_path_start}/com/mojang/authlib/1.5.22/authlib-1.5.22.jar" + sep)
+			f.write(f"{super_path_start}/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar" + sep)
+			#Should look like MCPY_INSTALL_PATH/cli/downloads/forge/forge<VERSION>.jar					
+			print(f"Forge JAR: {forge_jar}/forge{version}.jar")					
+			f.write(f"{forge_jar}/forge{version}.jar" + sep)
 	#end
 #end
+
