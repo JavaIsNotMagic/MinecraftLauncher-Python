@@ -1,1 +1,11 @@
+January 3rd 2020: Version 0.0.1
 
+Created First CLI Linux executable. All files must be included for the executable to work.
+
+January 3rd 2020: Version 0.0.2
+
+Created First Working CLI Linux Executable. Remove old libraries. Use this version.
+
+January 3rd 2020: Version 0.0.3
+
+Fixed bug where if players weren't upgrading from an older version, mcpy would crash. This is the now prefered stable release.

@@ -11,10 +11,10 @@ def reqs():
 # packages=setuptools.find_packages(),
 setuptools.setup(
     name="mcpy",
-    version="0.0.4.1",
+    version="0.0.5.0",
     author="Connor Tozer",
     author_email="connor.tozer2017@gmail.com",
-    long_description="mc-python is a minecraft launcher written entirley in python. This launcher supports all vanilla versions.",
+    long_description="mc-python is a minecraft launcher written entirley in python. This launcher supports all versions. (Releases, Snapshots Forge and Beta and Alpha)",
     description="A Minecraft Launcher written in Python",
     url="https://github.com/JavaIsNotMagic/MinecraftLauncher-Python",
     classifiers=[
