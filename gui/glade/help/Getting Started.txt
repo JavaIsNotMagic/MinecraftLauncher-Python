@@ -1,0 +1,21 @@
+Thank you for choosing HaxiumCustom Launcher!
+
+Here are some tips to help you get started.
+
+If you are confident in your skills or don't want a popup, feel free to use the cli (command line interface)
+Help for this version is located in the cli/docs directory.
+
+The Graphical interface was designed with the end user in mind (That's you!) but it does come with some quirks.
+
+Creating a new User 
+Use the Save option under the File menu. 
+It will then prompt for a username and password, and then safely record these for later.
+
+Editing your user
+Use the Edit option in the main menu. Follow the on-screen prompts to edit your account information.
+
+Want to help the project grow?
+Great! Send an email to Connor (connor.tozer2017@gmail.com), and he will give you instructions on how to join the team
+
+Need more help?
+Send an email to Connor (connor.tozer2017@gmail.com), and he will try to answer all of your questions.
