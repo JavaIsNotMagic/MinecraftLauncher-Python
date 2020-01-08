@@ -5,3 +5,8 @@ html, body {
 	margin: 0;
 	padding: 0;
 }
+body h3, body div {
+	margin: 1em;
+	padding: 0.5em;
+	background: rgba(127, 127, 127, 0.5)
+}

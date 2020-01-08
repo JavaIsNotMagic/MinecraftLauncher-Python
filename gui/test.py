@@ -53,10 +53,16 @@ class HTMLRender(wx.Dialog):
 		sizer.Add(self.browser, 1, wx.EXPAND, 10)
 		self.SetSizer(sizer)
 		self.SetSize((700, 700))
-
+		self.Bind(wx.EVT_CLOSE, self.OnQuit)
+	def OnQuit(self, event):
+		self.Destroy()
+		return wx.ID_CANCEL
 
 launcher = HTMLRender(None, -1)
 print(f'file://{cwd}/static/index.html')
 launcher.browser.LoadURL(f'file://{cwd}/static/index.html')
 launcher.Show()
 app.MainLoop()
+
+#SIDE NOTE:
+#Eventually implement a WebSocket server from the main Python script, and connect using JavaScript to communicate events and transmit data. Alternatively implement an HTTP server and use GET/POST. wxPython doesn't seem to have event listeners between JavaScript and Python. If it does, I'm too lazy to learn the code for it. I will just take the more complex route and make a WebSocket server and communicate that way.
