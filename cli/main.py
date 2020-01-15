@@ -57,9 +57,15 @@ url = "https://launchermeta.mojang.com/mc/game/version_manifest.json"
 gameDir = str(os.getcwd()) + "/minecraft/game"
 path = str(os.getcwd())
 try:
+	os.mkdir(str(os.getcwd()) + "/minecraft")	
 	os.mkdir(str(os.getcwd()) + "/downloads")
 	os.mkdir(str(os.getcwd()) + "/downloads/mc")
 	os.mkdir(str(os.getcwd()) + "/downloads/mc/data")
+	os.mkdir(str(os.getcwd()) + "/downloads/mc/jars")
+	os.mkdir(str(os.getcwd()) + "/downloads/mc/versions")
+	os.mkdir(str(os.getcwd()) + "/downloads/mc/assets")
+	os.mkdir(str(os.getcwd()) + "/downloads/mc/assets/objects")
+	os.mkdir(str(os.getcwd()) + "/downloads/mc/assets/indexes")
 except FileExistsError:
 	pass
 #end

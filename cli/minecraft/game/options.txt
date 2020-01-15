@@ -1,5 +1,5 @@
-version:2224
-autoJump:true
+version:2227
+autoJump:false
 autoSuggestions:true
 chatColors:true
 chatLinks:true
