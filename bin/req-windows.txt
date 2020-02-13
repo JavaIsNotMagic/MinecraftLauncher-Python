@@ -1,0 +1,5 @@
+#Modules that need to be installed in order for mcpy to work.
+
+CursesMenu==0.0.1a0
+windows-curses
+pyinstaller
