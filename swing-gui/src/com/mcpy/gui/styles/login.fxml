@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Minecraft Launcher Python Login Screen" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+  <content>
+    <AnchorPane id="submit" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+         <children>
+            <Label id="label_username" layoutX="53.0" layoutY="121.0" text="Username" />
+            <Label id="label_password" layoutX="281.0" layoutY="121.0" text="Password" />
+            <PasswordField id="password" layoutX="281.0" layoutY="145.0" />
+            <TextField id="username" layoutX="53.0" layoutY="145.0" />
+            <Button layoutX="224.0" layoutY="199.0" mnemonicParsing="false" text="Login" />
+            <ImageView fitHeight="96.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../assets/dsl.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+  </content>
+</TitledPane>
