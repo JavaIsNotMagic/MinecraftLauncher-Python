@@ -1,0 +1,4 @@
+PACKAGE JAR
+
+jar cvfm gui.jar MANIFEST.MF com/mcpy/gui/*.class com/mcpy/gui/styles/
+

@@ -10,7 +10,7 @@ public class Login extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("styles/main.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("styles/login.fxml"));
         primaryStage.setTitle("Minecraft Launcher Python");
         primaryStage.setScene(new Scene(root, 800, 500));
         primaryStage.show();

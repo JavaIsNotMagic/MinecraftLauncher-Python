@@ -5,9 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Window;
 
-import com.mcpy.LoginHandler;
-import com.mcpy.Play;
-import com.mcpy.AccountHandler;
+import com.mcpy.gui.Play;
+import com.mcpy.gui.Login;
+import com.mcpy.gui.CreateAccount;
 /* Logic for the main gui. DO NOT EDIT. */
 
 public class MainController {
@@ -23,21 +23,18 @@ public class MainController {
 
     @FXML
     protected void loginButtonEvent(ActionEvent lbe) {
-        LoginHandler.login();
+        String[] args = (null);        
+        Login.main(args);
     };
     
     @FXML    
     protected void create_accountButtonEvent(ActionEvent cabe) {
-        AccountHandler.new();
+        String[] args = (null);          
+        CreateAccount.main(args);
     };
     
     @FXML    
-    protected void playButtonActionEvent(ActionEvent pbae) {
-        boolean authenticated = AccountHandler.login();
-        if(authenticated) {
-            Play.play_mc();
-        } else {
-            System.out.println("ERROR: Authentication Failed!");
-        }
+    protected void playButtonActionEvent(ActionEvent pbae) {       
+        Play.play_mc();
     }
 }
