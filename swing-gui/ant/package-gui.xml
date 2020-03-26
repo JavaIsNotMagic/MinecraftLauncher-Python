@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project MCPY">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <!--define folder properties-->
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="/home/connor/eclipse-workspace"/>
+    <property name="dir.jarfile" value="/home/connor/Desktop/Porgramming/Python/MCPY/swing-gui/dist"/>
+    <target name="create_run_jar">
+        <jar destfile="${dir.jarfile}/gui-1.0.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="com.mcpy.gui.MCPY"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="${dir.workspace}/MCPY/bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/connor/Desktop/Porgramming/Python/MCPY/swing-gui/src/libs/mysql-connector-java-8.0.19.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/connor/Desktop/java-stuff/java-fx/lib/javafx.base.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/connor/Desktop/java-stuff/java-fx/lib/javafx.controls.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/connor/Desktop/java-stuff/java-fx/lib/javafx.fxml.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/connor/Desktop/java-stuff/java-fx/lib/javafx.graphics.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/connor/Desktop/java-stuff/java-fx/lib/javafx.media.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/connor/Desktop/java-stuff/java-fx/lib/javafx.swing.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/connor/Desktop/java-stuff/java-fx/lib/javafx.web.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/connor/Desktop/java-stuff/java-fx/lib/javafx-swt.jar"/>
+        </jar>
+    </target>
+</project>
