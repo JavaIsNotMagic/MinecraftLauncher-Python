@@ -13,7 +13,6 @@
                 <attribute name="Class-Path" value="."/>
             </manifest>
             <fileset dir="${dir.workspace}/MCPY/bin"/>
-            <zipfileset excludes="META-INF/*.SF" src="/home/connor/Desktop/Porgramming/Python/MCPY/swing-gui/src/libs/mysql-connector-java-8.0.19.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/connor/Desktop/java-stuff/java-fx/lib/javafx.base.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/connor/Desktop/java-stuff/java-fx/lib/javafx.controls.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/connor/Desktop/java-stuff/java-fx/lib/javafx.fxml.jar"/>
@@ -22,6 +21,7 @@
             <zipfileset excludes="META-INF/*.SF" src="/home/connor/Desktop/java-stuff/java-fx/lib/javafx.swing.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/connor/Desktop/java-stuff/java-fx/lib/javafx.web.jar"/>
             <zipfileset excludes="META-INF/*.SF" src="/home/connor/Desktop/java-stuff/java-fx/lib/javafx-swt.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/home/connor/Desktop/mysql-connector-java-8.0.19.jar"/>
         </jar>
     </target>
 </project>
